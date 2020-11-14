@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-module Ifetc32(Instruction,PC_plus_4_out,Add_result,Read_data_1,Branch,nBranch,Jmp,Jal,Jrn,Zero,clock,reset,opcplus4,PC_out);
+module Ifetc32(Instruction,PC_plus_4_out,Add_result,Read_data_1,Branch,nBranch,Jmp,Jal,Jrn,Zero,clock,reset,opcplus4);
     output[31:0] Instruction;			// 输出指令
     output[31:0] PC_plus_4_out;
     input[31:0]  Add_result;
@@ -13,7 +13,7 @@ module Ifetc32(Instruction,PC_plus_4_out,Add_result,Read_data_1,Branch,nBranch,J
     input        Zero;
     input        clock,reset;
     output[31:0] opcplus4;
-    output[31:0] PC_out;//验证使用
+   // output[31:0] PC_out;//验证使用
 
     
     wire[31:0]   PC_plus_4;
@@ -33,7 +33,7 @@ module Ifetc32(Instruction,PC_plus_4_out,Add_result,Read_data_1,Branch,nBranch,J
 
     assign PC_out=PC[31:0];
     assign PC_plus_4_out=PC_plus_4[31:0];    
-    assign PC_plus_4[31:2]=PC_plus_4[31:2]+30'b001;
+    assign PC_plus_4[31:2]=PC[31:2]+30'b001;
     assign PC_plus_4[1:0]=2'b00;
 
     assign Instruction = Jpadr;              //  取出指令

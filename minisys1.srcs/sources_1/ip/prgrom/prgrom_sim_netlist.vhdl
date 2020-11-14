@@ -1,9 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Sun Nov  8 11:21:53 2020
+-- Date        : Sun Nov  8 11:21:52 2020
 -- Host        : LAPTOP-0A54SNRA running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim c:/minisys1/minisys1.srcs/sources_1/ip/prgrom/prgrom_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top prgrom -prefix
+--               prgrom_ prgrom_sim_netlist.vhdl
 -- Design      : prgrom
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -18,8 +19,6 @@ entity prgrom_bindec is
     ena_array : out STD_LOGIC_VECTOR ( 1 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of prgrom_bindec : entity is "bindec";
 end prgrom_bindec;
 
 architecture STRUCTURE of prgrom_bindec is
@@ -77,8 +76,6 @@ entity prgrom_blk_mem_gen_mux is
     \douta[12]_1\ : in STD_LOGIC_VECTOR ( 7 downto 0 );
     \douta[12]_2\ : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of prgrom_blk_mem_gen_mux : entity is "blk_mem_gen_mux";
 end prgrom_blk_mem_gen_mux;
 
 architecture STRUCTURE of prgrom_blk_mem_gen_mux is
@@ -491,8 +488,6 @@ entity prgrom_blk_mem_gen_prim_wrapper_init is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of prgrom_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end prgrom_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of prgrom_blk_mem_gen_prim_wrapper_init is
@@ -4115,8 +4110,6 @@ entity prgrom_blk_mem_gen_prim_width is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of prgrom_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end prgrom_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of prgrom_blk_mem_gen_prim_width is
@@ -4512,8 +4505,6 @@ entity prgrom_blk_mem_gen_generic_cstr is
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     clka : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of prgrom_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end prgrom_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of prgrom_blk_mem_gen_generic_cstr is
@@ -4958,8 +4949,6 @@ entity prgrom_blk_mem_gen_top is
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     clka : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of prgrom_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end prgrom_blk_mem_gen_top;
 
 architecture STRUCTURE of prgrom_blk_mem_gen_top is
@@ -4981,8 +4970,6 @@ entity prgrom_blk_mem_gen_v8_4_2_synth is
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     clka : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of prgrom_blk_mem_gen_v8_4_2_synth : entity is "blk_mem_gen_v8_4_2_synth";
 end prgrom_blk_mem_gen_v8_4_2_synth;
 
 architecture STRUCTURE of prgrom_blk_mem_gen_v8_4_2_synth is
@@ -5214,8 +5201,6 @@ entity prgrom_blk_mem_gen_v8_4_2 is
   attribute C_WRITE_WIDTH_B of prgrom_blk_mem_gen_v8_4_2 : entity is 32;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of prgrom_blk_mem_gen_v8_4_2 : entity is "artix7";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of prgrom_blk_mem_gen_v8_4_2 : entity is "blk_mem_gen_v8_4_2";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of prgrom_blk_mem_gen_v8_4_2 : entity is "yes";
 end prgrom_blk_mem_gen_v8_4_2;

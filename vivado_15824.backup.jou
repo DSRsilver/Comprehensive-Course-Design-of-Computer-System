@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Nov 13 13:03:47 2020
+# Process ID: 15824
+# Current directory: C:/minsys1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent32912 C:\minsys1\minisys1.xpr
+# Log file: C:/minsys1/vivado.log
+# Journal file: C:/minsys1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/minsys1/minisys1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source idcode32_sim.tcl
+run 10 us
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Executs32 [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+close_sim
