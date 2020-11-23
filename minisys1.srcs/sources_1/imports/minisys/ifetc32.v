@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-module Ifetc32(Instruction,PC_plus_4_out,Add_result,Read_data_1,Branch,nBranch,Jmp,Jal,Jrn,Zero,clock,reset,opcplus4);
+module Ifetc32(Instruction,PC_plus_4_out,Add_result,Read_data_1,Branch,nBranch,Jmp,Jal,Jrn,Zero,clock,reset,opcplus4,PC_out);
     output[31:0] Instruction;			// 输出指令
     output[31:0] PC_plus_4_out;
     input[31:0]  Add_result;
@@ -13,7 +13,7 @@ module Ifetc32(Instruction,PC_plus_4_out,Add_result,Read_data_1,Branch,nBranch,J
     input        Zero;
     input        clock,reset;
     output[31:0] opcplus4;
-   // output[31:0] PC_out;//验证使用
+    output[31:0] PC_out;//验证使用
 
     
     wire[31:0]   PC_plus_4;
@@ -44,18 +44,15 @@ module Ifetc32(Instruction,PC_plus_4_out,Add_result,Read_data_1,Branch,nBranch,J
             next_PC=Add_result;
         else if(Jrn==1) next_PC=Read_data_1[31:0];
         else    next_PC=PC_plus_4;
- //       else    next_PC=PC_plus_4[17:2];
     end
     
    always @(negedge clock) begin
      if(reset==1)   PC<=32'b00000000000000000000000000000000;//PC初始化
      else if((Jmp==1)||(Jal==1))begin
-            opcplus4=PC_plus_4;
-            PC<={4'b0000,Jpadr,2'b00};
-//            opcplus4=PC_plus_4[17:2];
-//            PC[17:0]<={Jpadr[15:0],2'b00};
+ //           opcplus4={2'b00,PC_plus_4[31:2]};//右移两位再放入$31
+             opcplus4=PC_plus_4[31:0];
+            PC<={4'b0000,Jpadr[25:0],2'b00};
         end
     else PC<=next_PC;  
-//    else    PC[17:2]<={next_PC[15:0],2'b00};
    end
 endmodule

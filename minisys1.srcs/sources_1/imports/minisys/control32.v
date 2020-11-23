@@ -38,7 +38,8 @@ module control32(Opcode,Function_opcode,Jrn,RegDST,ALUSrc,MemtoReg,RegWrite,MemW
     assign RegWrite=I_format||Lw|||Jal||Jrn||(R_format&&(!Jrn));
 //    assign sll_srl_sra=(Opcode==6'b000000&&Function_opcode===6'b0000xx)?1'b1:1'b0;
     assign sll_srl_sra=(Opcode==6'b000000&&(Function_opcode==6'b000000||Function_opcode==6'b000010||Function_opcode==6'b000011))?1'b1:1'b0;
-    assign ALUSrc=sll_srl_sra||I_format||Lw||Sw;
+//    assign ALUSrc=sll_srl_sra||I_format||Lw||Sw;
+    assign ALUSrc=I_format||Lw||Sw;
 //    assign Sftmd=(Opcode==6'b000000&&Function_opcode===6'b000xxx)?1'b1:1'b0;
     assign Sftmd=(Opcode==6'b000000&&(Function_opcode==6'b000000||Function_opcode==6'b000010||Function_opcode==6'b000011||Function_opcode==6'b000100||Function_opcode==6'b000110||Function_opcode==6'b000111))?1'b1:1'b0;
     assign ALUOp={(R_format||I_format),(Branch||nBranch)};

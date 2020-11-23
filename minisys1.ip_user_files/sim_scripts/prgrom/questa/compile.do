@@ -10,6 +10,7 @@ vmap xpm questa_lib/msim/xpm
 vmap blk_mem_gen_v8_4_2 questa_lib/msim/blk_mem_gen_v8_4_2
 
 vlog -work xil_defaultlib -64 -sv \
+"C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
 "C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -64 -93 \
@@ -20,7 +21,6 @@ vlog -work blk_mem_gen_v8_4_2 -64 \
 
 vlog -work xil_defaultlib -64 \
 "../../../../minisys1.srcs/sources_1/ip/prgrom/sim/prgrom.v" \
-
 
 vlog -work xil_defaultlib \
 "glbl.v"
