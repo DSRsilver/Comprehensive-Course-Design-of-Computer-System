@@ -1,0 +1,22 @@
+使用流程：
+https://blog.csdn.net/qq_36667170/article/details/79085301
+参考该博客能解决大部分需要
+上传文件前务必，务必先pull，不然会造成覆盖
+
+指令简介：
+git init初始化文件夹
+git add . 添加所有文件到缓存区
+git remote add origin ssh://xxxxx  添加远程仓库地址
+git commit -m "something"  
+git push -u origin master
+git pull origin master
+
+git branch NAME 创建名为NAME的分支
+git checkout NAME 切换到名字为NAME的分支
+git commit -m "anything" 提交"anything"的修改到缓存区
+git push -u origin NAME 将缓存区的修改提交到远程仓库的NAME分支
+
+git branch -a 查看所有branch
+git branch -d NAME 删除本地NAME的分支
+git push origin --delete NAME  删除远程仓库的NAME分支
+
