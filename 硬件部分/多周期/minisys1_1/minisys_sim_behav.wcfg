@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="minisys_sim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="minisys_sim" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="13445200000fs"></ZoomStartTime>
+      <ZoomEndTime time="14529200001fs"></ZoomEndTime>
+      <Cursor1Time time="13652200000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="145"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="58" />
+   <wvobject fp_name="/minisys_sim/prst" type="logic">
+      <obj_property name="ElementShortName">prst</obj_property>
+      <obj_property name="ObjectShortName">prst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/pclk" type="logic">
+      <obj_property name="ElementShortName">pclk</obj_property>
+      <obj_property name="ObjectShortName">pclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/start_pg" type="logic">
+      <obj_property name="ElementShortName">start_pg</obj_property>
+      <obj_property name="ObjectShortName">start_pg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/rx" type="logic">
+      <obj_property name="ElementShortName">rx</obj_property>
+      <obj_property name="ObjectShortName">rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/led2N4" type="array">
+      <obj_property name="ElementShortName">led2N4[15:0]</obj_property>
+      <obj_property name="ObjectShortName">led2N4[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/tx" type="logic">
+      <obj_property name="ElementShortName">tx</obj_property>
+      <obj_property name="ObjectShortName">tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/ifetch/PC_out" type="array">
+      <obj_property name="ElementShortName">PC_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/ifetch/Instruction" type="array">
+      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/state" type="array">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/idecode/read_data_1" type="array">
+      <obj_property name="ElementShortName">read_data_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data_1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/idecode/read_data_2" type="array">
+      <obj_property name="ElementShortName">read_data_2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data_2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/memory/ram/clka" type="logic">
+      <obj_property name="ElementShortName">clka</obj_property>
+      <obj_property name="ObjectShortName">clka</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/memory/ram/wea" type="array">
+      <obj_property name="ElementShortName">wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/memory/ram/addra" type="array">
+      <obj_property name="ElementShortName">addra[13:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[13:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/memory/ram/dina" type="array">
+      <obj_property name="ElementShortName">dina[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/memory/ram/douta" type="array">
+      <obj_property name="ElementShortName">douta[31:0]</obj_property>
+      <obj_property name="ObjectShortName">douta[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/Sign_extend" type="array">
+      <obj_property name="ElementShortName">Sign_extend[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Sign_extend[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/idecode/register" type="array">
+      <obj_property name="ElementShortName">register[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">register[0:31][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/ALU_Result" type="array">
+      <obj_property name="ElementShortName">ALU_Result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_Result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/Wpc" type="array">
+      <obj_property name="ElementShortName">Wpc[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Wpc[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/Wir" type="logic">
+      <obj_property name="ElementShortName">Wir</obj_property>
+      <obj_property name="ObjectShortName">Wir</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/Waluresult" type="logic">
+      <obj_property name="ElementShortName">Waluresult</obj_property>
+      <obj_property name="ObjectShortName">Waluresult</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/Jrn" type="logic">
+      <obj_property name="ElementShortName">Jrn</obj_property>
+      <obj_property name="ObjectShortName">Jrn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/RegDST" type="logic">
+      <obj_property name="ElementShortName">RegDST</obj_property>
+      <obj_property name="ObjectShortName">RegDST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/ALUSrc" type="logic">
+      <obj_property name="ElementShortName">ALUSrc</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/MemorIOtoReg" type="logic">
+      <obj_property name="ElementShortName">MemorIOtoReg</obj_property>
+      <obj_property name="ObjectShortName">MemorIOtoReg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/IORead" type="logic">
+      <obj_property name="ElementShortName">IORead</obj_property>
+      <obj_property name="ObjectShortName">IORead</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/IOWrite" type="logic">
+      <obj_property name="ElementShortName">IOWrite</obj_property>
+      <obj_property name="ObjectShortName">IOWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/RegWrite" type="logic">
+      <obj_property name="ElementShortName">RegWrite</obj_property>
+      <obj_property name="ObjectShortName">RegWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/MemWrite" type="logic">
+      <obj_property name="ElementShortName">MemWrite</obj_property>
+      <obj_property name="ObjectShortName">MemWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/MemRead" type="logic">
+      <obj_property name="ElementShortName">MemRead</obj_property>
+      <obj_property name="ObjectShortName">MemRead</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/Sftmd" type="logic">
+      <obj_property name="ElementShortName">Sftmd</obj_property>
+      <obj_property name="ObjectShortName">Sftmd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/ALUOp" type="array">
+      <obj_property name="ElementShortName">ALUOp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/Jmp" type="logic">
+      <obj_property name="ElementShortName">Jmp</obj_property>
+      <obj_property name="ObjectShortName">Jmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/I_format" type="logic">
+      <obj_property name="ElementShortName">I_format</obj_property>
+      <obj_property name="ObjectShortName">I_format</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/Jal" type="logic">
+      <obj_property name="ElementShortName">Jal</obj_property>
+      <obj_property name="ObjectShortName">Jal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/Branch" type="logic">
+      <obj_property name="ElementShortName">Branch</obj_property>
+      <obj_property name="ObjectShortName">Branch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/nBranch" type="logic">
+      <obj_property name="ElementShortName">nBranch</obj_property>
+      <obj_property name="ObjectShortName">nBranch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/R_format" type="logic">
+      <obj_property name="ElementShortName">R_format</obj_property>
+      <obj_property name="ObjectShortName">R_format</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/Lw" type="logic">
+      <obj_property name="ElementShortName">Lw</obj_property>
+      <obj_property name="ObjectShortName">Lw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/control/Sw" type="logic">
+      <obj_property name="ElementShortName">Sw</obj_property>
+      <obj_property name="ObjectShortName">Sw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/Ainput" type="array">
+      <obj_property name="ElementShortName">Ainput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Ainput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/Binput" type="array">
+      <obj_property name="ElementShortName">Binput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Binput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/Cinput" type="array">
+      <obj_property name="ElementShortName">Cinput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Cinput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/Dinput" type="array">
+      <obj_property name="ElementShortName">Dinput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Dinput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/Einput" type="array">
+      <obj_property name="ElementShortName">Einput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Einput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/Finput" type="array">
+      <obj_property name="ElementShortName">Finput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Finput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/Ginput" type="array">
+      <obj_property name="ElementShortName">Ginput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Ginput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/Hinput" type="array">
+      <obj_property name="ElementShortName">Hinput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Hinput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/execute/Sinput" type="array">
+      <obj_property name="ElementShortName">Sinput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Sinput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/read_data_1" type="array">
+      <obj_property name="ElementShortName">read_data_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data_1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/read_data_2" type="array">
+      <obj_property name="ElementShortName">read_data_2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data_2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/sign_extend" type="array">
+      <obj_property name="ElementShortName">sign_extend[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sign_extend[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/add_result" type="array">
+      <obj_property name="ElementShortName">add_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">add_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/alu_result" type="array">
+      <obj_property name="ElementShortName">alu_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/minisys_sim/U/read_data" type="array">
+      <obj_property name="ElementShortName">read_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data[31:0]</obj_property>
+   </wvobject>
+</wave_config>

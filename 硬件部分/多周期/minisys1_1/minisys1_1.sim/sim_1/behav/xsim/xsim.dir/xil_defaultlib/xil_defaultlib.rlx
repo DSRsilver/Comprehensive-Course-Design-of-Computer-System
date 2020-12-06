@@ -1,0 +1,23 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+C:/minisys1_1_classfiles/minisys/sim/control32_sim.v,1606813092,verilog,,,,control32_sim,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/minisys1_1_classfiles/minisys/sim/exe_sim.v,1606985407,verilog,,,,exe_sim,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/minisys1_1_classfiles/minisys/sim/ifetc32_sim.v,1606807457,verilog,,,,ifetc32_sim,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/minisys1_1_classfiles/minisys/sim/minisys_sim.v,1607063123,verilog,,,,minisys_sim,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/control32.v,1606812625,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/dmemory32.v,,control32,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/dmemory32.v,1606487765,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/executs32.v,,dmemory32,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/executs32.v,1606985328,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/idecode32.v,,Executs32,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/idecode32.v,1606809438,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/ifetc32.v,,Idecode32,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/ifetc32.v,1606809958,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/minisys.v,,Ifetc32,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/minisys.v,1607063881,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/programrom.v,,minisys,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/programrom.v,1606487765,verilog,,C:/minisys1_1_classfiles/minisys/sim/minisys_sim.v,,programrom,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/cpuclk/cpuclk.v,1606462768,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/imports/minisys/control32.v,,cpuclk,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/cpuclk/cpuclk_clk_wiz.v,1606462768,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/cpuclk/cpuclk.v,,cpuclk_clk_wiz,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/prgrom/sim/prgrom.v,1606464602,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg.v,,prgrom,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/ram/sim/ram.v,1606466172,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/prgrom/sim/prgrom.v,,ram,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/uart_bmpg_0/sim/uart_bmpg_0.v,1606462419,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/cpuclk/cpuclk_clk_wiz.v,,uart_bmpg_0,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg.v,1606462419,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/uart_bmpg_0/upg.v,,uart_bmpg,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
+C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/uart_bmpg_0/upg.v,1606462419,verilog,,C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.srcs/sources_1/ip/uart_bmpg_0/sim/uart_bmpg_0.v,,upg,,,../../../../minisys1_1.srcs/sources_1/ip/cpuclk,,,,,
