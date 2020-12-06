@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Nov 24 10:43:10 2020
+# Process ID: 13796
+# Current directory: E:/VivadoProject/key16/key16.runs/impl_1
+# Command line: vivado.exe -log key16.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source key16.tcl -notrace
+# Log file: E:/VivadoProject/key16/key16.runs/impl_1/key16.vdi
+# Journal file: E:/VivadoProject/key16/key16.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source key16.tcl -notrace

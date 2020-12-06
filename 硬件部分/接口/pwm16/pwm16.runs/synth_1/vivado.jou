@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Nov 25 10:27:41 2020
+# Process ID: 8624
+# Current directory: E:/VivadoProject/pwm16/pwm16.runs/synth_1
+# Command line: vivado.exe -log pwm16.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pwm16.tcl
+# Log file: E:/VivadoProject/pwm16/pwm16.runs/synth_1/pwm16.vds
+# Journal file: E:/VivadoProject/pwm16/pwm16.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source pwm16.tcl -notrace

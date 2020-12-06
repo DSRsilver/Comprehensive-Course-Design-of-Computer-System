@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1606217310">
+  <File Type="BITSTR-BMM" Name="ctc16_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="ctc16_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="ctc16_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="ctc16_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="ctc16.tcl"/>
+  <File Type="OPT-TIMING" Name="ctc16_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="ctc16_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="ctc16_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="ctc16_reports.tcl"/>
+  <File Type="OPT-DRC" Name="ctc16_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="ctc16.hwdef"/>
+  <File Type="PWROPT-DCP" Name="ctc16_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="ctc16_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="ctc16_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="ctc16_placed.dcp"/>
+  <File Type="PLACE-IO" Name="ctc16_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="ctc16_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="ctc16_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="ctc16_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="ctc16_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="ctc16_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="ctc16_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="ctc16.bgn"/>
+  <File Type="PLACE-TIMING" Name="ctc16_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="ctc16_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="ctc16.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="ctc16_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="ctc16_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="ctc16_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="ctc16.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="ctc16_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="ctc16_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="ctc16_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="ctc16_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="ctc16_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="ctc16_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="ctc16.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="ctc16_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="ctc16.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="ctc16_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="ctc16_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="ctc16.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="ctc16_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="ctc16_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="ctc16_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="ctc16_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="ctc16_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="ctc16_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="ctc16_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="ctc16_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="ctc16_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="ctc16_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="ctc16_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="ctc16_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="ctc16_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="ctc16_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="ctc16_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="ctc16_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="ctc16_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="ctc16_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="ctc16_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="ctc16.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="ctc16_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="ctc16.rbt"/>
+  <File Type="BITSTR-NKY" Name="ctc16.nky"/>
+  <File Type="BG-DRC" Name="ctc16.drc"/>
+  <File Type="RDI-RDI" Name="ctc16.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/ctc16.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ctc16"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

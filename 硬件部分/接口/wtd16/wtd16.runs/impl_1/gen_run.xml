@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1606357816">
+  <File Type="BITSTR-BMM" Name="wtd16_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="wtd16_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="wtd16_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="wtd16_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="wtd16.tcl"/>
+  <File Type="OPT-TIMING" Name="wtd16_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="wtd16_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="wtd16_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="wtd16_reports.tcl"/>
+  <File Type="OPT-DRC" Name="wtd16_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="wtd16.hwdef"/>
+  <File Type="PWROPT-DCP" Name="wtd16_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="wtd16_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="wtd16_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="wtd16_placed.dcp"/>
+  <File Type="PLACE-IO" Name="wtd16_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="wtd16_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="wtd16_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="wtd16_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="wtd16_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="wtd16_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="wtd16_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="wtd16.bgn"/>
+  <File Type="PLACE-TIMING" Name="wtd16_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="wtd16_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="wtd16.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="wtd16_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="wtd16_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="wtd16_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="wtd16.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="wtd16_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="wtd16_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="wtd16_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="wtd16_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="wtd16_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="wtd16_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="wtd16.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="wtd16_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="wtd16.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="wtd16_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="wtd16_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="wtd16.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="wtd16_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="wtd16_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="wtd16_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="wtd16_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="wtd16_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="wtd16_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="wtd16_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="wtd16_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="wtd16_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="wtd16_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="wtd16_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="wtd16_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="wtd16_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="wtd16_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="wtd16_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="wtd16_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="wtd16_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="wtd16_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="wtd16_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="wtd16.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="wtd16_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="wtd16.rbt"/>
+  <File Type="BITSTR-NKY" Name="wtd16.nky"/>
+  <File Type="BG-DRC" Name="wtd16.drc"/>
+  <File Type="RDI-RDI" Name="wtd16.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/wtd16.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="wtd16"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

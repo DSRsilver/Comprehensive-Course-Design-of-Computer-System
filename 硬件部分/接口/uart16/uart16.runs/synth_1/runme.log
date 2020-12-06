@@ -1,0 +1,334 @@
+
+*** Running vivado
+    with args -log uart16.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart16.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source uart16.tcl -notrace
+Command: synth_design -top uart16 -part xc7a100tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9204 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 430.008 ; gain = 98.160
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'uart16' [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:23]
+WARNING: [Synth 8-567] referenced signal 'reset' should be on the sensitivity list [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:152]
+WARNING: [Synth 8-567] referenced signal 'cs' should be on the sensitivity list [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:152]
+WARNING: [Synth 8-567] referenced signal 'stat3' should be on the sensitivity list [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:152]
+WARNING: [Synth 8-567] referenced signal 'reset' should be on the sensitivity list [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:163]
+WARNING: [Synth 8-567] referenced signal 'reset' should be on the sensitivity list [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:174]
+WARNING: [Synth 8-567] referenced signal 'reset' should be on the sensitivity list [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:182]
+WARNING: [Synth 8-567] referenced signal 'buff' should be on the sensitivity list [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:182]
+WARNING: [Synth 8-567] referenced signal 'scnt' should be on the sensitivity list [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:182]
+WARNING: [Synth 8-567] referenced signal 'reset' should be on the sensitivity list [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:193]
+WARNING: [Synth 8-567] referenced signal 'scnt3' should be on the sensitivity list [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:193]
+INFO: [Synth 8-6155] done synthesizing module 'uart16' (1#1) [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:23]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 486.258 ; gain = 154.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 486.258 ; gain = 154.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 486.258 ; gain = 154.410
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg484-1
+INFO: [Synth 8-4471] merging register 'rcnt2_reg[4:0]' into 'scnt2_reg[4:0]' [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:87]
+INFO: [Synth 8-5546] ROM "scnt1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "scnt1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ioread_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "txd2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "statflag1" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'status_reg' [E:/VivadoProject/uart16/uart16.srcs/sources_1/new/uart16.v:155]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 486.258 ; gain = 154.410
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 4     
+	                8 Bit    Registers := 4     
+	                5 Bit    Registers := 5     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 10    
+	   5 Input     16 Bit        Muxes := 1     
+	  11 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 13    
+	  11 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 19    
+	  12 Input      1 Bit        Muxes := 5     
+	  11 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module uart16 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 4     
+	                8 Bit    Registers := 4     
+	                5 Bit    Registers := 5     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 10    
+	   5 Input     16 Bit        Muxes := 1     
+	  11 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 13    
+	  11 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 19    
+	  12 Input      1 Bit        Muxes := 5     
+	  11 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'buff_reg[7]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'buff_reg[6]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'buff_reg[5]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'buff_reg[4]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'buff_reg[3]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'buff_reg[2]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[0]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[1]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[2]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[3]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[4]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[5]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[6]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[7]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[8]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[9]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[10]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[11]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[12]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[13]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[14]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'stat2_reg[15]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'buff_reg[1]' (FDRE) to 'buff_reg[0]'
+INFO: [Synth 8-3886] merging instance 'buff_reg[0]' (FDRE) to 'scnt2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'scnt2_reg[2]' (FDRE) to 'scnt2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'scnt2_reg[1]' (FDRE) to 'scnt2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'scnt2_reg[3]' (FDRE) to 'scnt2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'scnt2_reg[0]' (FDRE) to 'scnt2_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\scnt2_reg[4] )
+INFO: [Synth 8-3886] merging instance 'scnt1_reg[3]' (FDRE_1) to 'scnt1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'scnt1_reg[2]' (FDRE_1) to 'scnt1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'scnt1_reg[1]' (FDRE_1) to 'scnt1_reg[4]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (txd1_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\scnt3_reg[4] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 667.711 ; gain = 335.863
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 667.711 ; gain = 335.863
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (status_reg[15]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[14]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[13]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[12]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[11]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[10]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[9]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[8]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[7]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[6]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[5]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[4]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[3]) is unused and will be removed from module uart16.
+WARNING: [Synth 8-3332] Sequential element (status_reg[2]) is unused and will be removed from module uart16.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 667.711 ; gain = 335.863
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 667.711 ; gain = 335.863
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 667.711 ; gain = 335.863
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 667.711 ; gain = 335.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 667.711 ; gain = 335.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 667.711 ; gain = 335.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 667.711 ; gain = 335.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     2|
+|2     |LUT1 |     1|
+|3     |LUT2 |    12|
+|4     |LUT3 |     7|
+|5     |LUT4 |     6|
+|6     |LUT5 |     9|
+|7     |LUT6 |    33|
+|8     |FDRE |    54|
+|9     |FDSE |     1|
+|10    |LD   |     2|
+|11    |IBUF |    17|
+|12    |OBUF |    17|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   161|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 667.711 ; gain = 335.863
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 667.711 ; gain = 335.863
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 667.711 ; gain = 335.863
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 741.125 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  LD => LDCE: 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+51 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:32 . Memory (MB): peak = 741.125 ; gain = 422.156
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 741.125 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'E:/VivadoProject/uart16/uart16.runs/synth_1/uart16.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file uart16_utilization_synth.rpt -pb uart16_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 25 23:13:26 2020...

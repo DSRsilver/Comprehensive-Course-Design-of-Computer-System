@@ -1,0 +1,336 @@
+
+*** Running vivado
+    with args -log ctc16.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ctc16.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source ctc16.tcl -notrace
+Command: synth_design -top ctc16 -part xc7a100tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10748 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 430.984 ; gain = 98.969
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ctc16' [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:23]
+WARNING: [Synth 8-567] referenced signal 'reset' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:188]
+WARNING: [Synth 8-567] referenced signal 'cs' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:188]
+WARNING: [Synth 8-567] referenced signal 'iow' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:188]
+WARNING: [Synth 8-567] referenced signal 'address' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:188]
+WARNING: [Synth 8-567] referenced signal 'ior' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:188]
+WARNING: [Synth 8-567] referenced signal 'mode1' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:188]
+WARNING: [Synth 8-567] referenced signal 'reset' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:203]
+WARNING: [Synth 8-567] referenced signal 'cs' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:203]
+WARNING: [Synth 8-567] referenced signal 'iow' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:203]
+WARNING: [Synth 8-567] referenced signal 'address' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:203]
+WARNING: [Synth 8-567] referenced signal 'ior' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:203]
+WARNING: [Synth 8-567] referenced signal 'mode2' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:203]
+WARNING: [Synth 8-567] referenced signal 'reset' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:218]
+WARNING: [Synth 8-567] referenced signal 'cs' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:218]
+WARNING: [Synth 8-567] referenced signal 'iow' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:218]
+WARNING: [Synth 8-567] referenced signal 'address' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:218]
+WARNING: [Synth 8-567] referenced signal 'mode1' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:218]
+WARNING: [Synth 8-567] referenced signal 'reset' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:232]
+WARNING: [Synth 8-567] referenced signal 'cs' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:232]
+WARNING: [Synth 8-567] referenced signal 'iow' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:232]
+WARNING: [Synth 8-567] referenced signal 'address' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:232]
+WARNING: [Synth 8-567] referenced signal 'mode2' should be on the sensitivity list [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:232]
+WARNING: [Synth 8-6014] Unused sequential element rubbish_reg was removed.  [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'ctc16' (1#1) [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:23]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 486.594 ; gain = 154.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 486.594 ; gain = 154.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 486.594 ; gain = 154.578
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg484-1
+INFO: [Synth 8-5546] ROM "cout0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cout1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "cnt11" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cnt21" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stat11" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stat11" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stat21" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stat21" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ioread_data0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'status1_reg' [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:194]
+WARNING: [Synth 8-327] inferring latch for variable 'count1_reg' [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:223]
+WARNING: [Synth 8-327] inferring latch for variable 'status2_reg' [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:209]
+WARNING: [Synth 8-327] inferring latch for variable 'count2_reg' [E:/VivadoProject/ctc16/ctc16.srcs/sources_1/new/ctc16.v:237]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 486.594 ; gain = 154.578
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 12    
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 57    
+	   5 Input     16 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 14    
+	   3 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module ctc16 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 12    
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 57    
+	   5 Input     16 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 14    
+	   3 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_42' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_41' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_40' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_39' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_38' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_37' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_36' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_35' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_34' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_33' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_32' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_31' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_30' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_29' (FDE_1) to 'ioread_data_reg__0i_28'
+INFO: [Synth 8-3886] merging instance 'ioread_data_reg__0i_28' (FDE_1) to 'ioread_data_reg__0i_27'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 670.219 ; gain = 338.203
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 670.219 ; gain = 338.203
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (status1_reg[14]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[13]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[12]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[11]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[10]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[9]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[8]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[7]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[6]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[5]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[4]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[3]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[2]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status1_reg[1]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[14]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[13]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[12]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[11]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[10]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[9]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[8]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[7]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[6]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[5]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[4]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[3]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[2]) is unused and will be removed from module ctc16.
+WARNING: [Synth 8-3332] Sequential element (status2_reg[1]) is unused and will be removed from module ctc16.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 670.219 ; gain = 338.203
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 670.219 ; gain = 338.203
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 670.219 ; gain = 338.203
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 670.219 ; gain = 338.203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 670.219 ; gain = 338.203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 670.219 ; gain = 338.203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 670.219 ; gain = 338.203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     4|
+|2     |CARRY4 |     8|
+|3     |LUT1   |    32|
+|4     |LUT2   |    29|
+|5     |LUT3   |    66|
+|6     |LUT4   |    78|
+|7     |LUT5   |     6|
+|8     |LUT6   |    65|
+|9     |FDRE   |   125|
+|10    |FDSE   |     2|
+|11    |LD     |    36|
+|12    |IBUF   |    27|
+|13    |OBUF   |     2|
+|14    |OBUFT  |    16|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   496|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 670.219 ; gain = 338.203
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 55 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 670.219 ; gain = 338.203
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 670.219 ; gain = 338.203
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 44 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 36 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 744.012 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 36 instances were transformed.
+  LD => LDCE (inverted pins: G): 36 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+35 Infos, 55 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 744.012 ; gain = 425.008
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 744.012 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'E:/VivadoProject/ctc16/ctc16.runs/synth_1/ctc16.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ctc16_utilization_synth.rpt -pb ctc16_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 24 19:28:10 2020...

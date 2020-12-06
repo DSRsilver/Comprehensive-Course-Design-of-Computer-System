@@ -1,0 +1,297 @@
+
+*** Running vivado
+    with args -log led16.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source led16.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source led16.tcl -notrace
+Command: synth_design -top led16 -part xc7a100tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11388 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 430.367 ; gain = 97.754
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'led16' [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:23]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:47]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:69]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:91]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+WARNING: [Synth 8-151] case item 4'b0000 is unreachable [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:113]
+INFO: [Synth 8-6155] done synthesizing module 'led16' (1#1) [E:/VivadoProject/led16/led16.srcs/sources_1/new/led16.v:23]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 486.484 ; gain = 153.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 486.484 ; gain = 153.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 486.484 ; gain = 153.871
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg484-1
+INFO: [Synth 8-5544] ROM "led0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "led1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "led2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "led3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 486.484 ; gain = 153.871
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module led16 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design led16 has port led0[6] driven by constant 1
+WARNING: [Synth 8-3917] design led16 has port led1[6] driven by constant 1
+WARNING: [Synth 8-3917] design led16 has port led2[6] driven by constant 1
+WARNING: [Synth 8-3917] design led16 has port led3[6] driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 633.750 ; gain = 301.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 633.750 ; gain = 301.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 633.750 ; gain = 301.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 633.750 ; gain = 301.137
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 633.750 ; gain = 301.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 633.750 ; gain = 301.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 633.750 ; gain = 301.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 633.750 ; gain = 301.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 633.750 ; gain = 301.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT4 |     4|
+|3     |FDCE |    16|
+|4     |IBUF |    19|
+|5     |OBUF |    28|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    68|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 633.750 ; gain = 301.137
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 64 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 633.750 ; gain = 301.137
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 633.750 ; gain = 301.137
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 742.559 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+13 Infos, 64 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 742.559 ; gain = 422.828
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 742.559 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'E:/VivadoProject/led16/led16.runs/synth_1/led16.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file led16_utilization_synth.rpt -pb led16_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 26 11:48:44 2020...
