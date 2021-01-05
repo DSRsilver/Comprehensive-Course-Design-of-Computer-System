@@ -1,0 +1,54 @@
+
+*** Running vivado
+    with args -log mult.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mult.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source mult.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/sysclassfiles/orgnizationtrain/minisys/IP/SEU_CSE_507_user_uart_bmpg_1.3'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+Command: synth_design -top mult -part xc7a100tfgg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7216 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 468.875 ; gain = 102.246
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mult' [c:/team_soc/minisys1_1/minisys1_1.srcs/sources/mult/synth/mult.vhd:67]
+WARNING: [Synth 8-5640] Port 'zero_detect' is missing in component declaration [c:/team_soc/minisys1_1/minisys1_1.srcs/sources/mult/synth/mult.vhd:70]
+WARNING: [Synth 8-5640] Port 'pcasc' is missing in component declaration [c:/team_soc/minisys1_1/minisys1_1.srcs/sources/mult/synth/mult.vhd:70]
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_MODEL_TYPE bound to: 0 - type: integer 
+	Parameter C_OPTIMIZE_GOAL bound to: 1 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 0 - type: integer 
+	Parameter C_A_WIDTH bound to: 32 - type: integer 
+	Parameter C_A_TYPE bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 32 - type: integer 
+	Parameter C_B_TYPE bound to: 0 - type: integer 
+	Parameter C_OUT_HIGH bound to: 63 - type: integer 
+	Parameter C_OUT_LOW bound to: 0 - type: integer 
+	Parameter C_MULT_TYPE bound to: 0 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_CCM_IMP bound to: 0 - type: integer 
+	Parameter C_B_VALUE bound to: 10000001 - type: string 
+	Parameter C_HAS_ZERO_DETECT bound to: 0 - type: integer 
+	Parameter C_ROUND_OUTPUT bound to: 0 - type: integer 
+	Parameter C_ROUND_PT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'mult_gen_v12_0_14' declared at 'c:/team_soc/minisys1_1/minisys1_1.srcs/sources/mult/hdl/mult_gen_v12_0_vh_rfs.vhd:21013' bound to instance 'U0' of component 'mult_gen_v12_0_14' [c:/team_soc/minisys1_1/minisys1_1.srcs/sources/mult/synth/mult.vhd:117]
+INFO: [Synth 8-256] done synthesizing module 'mult' (5#1) [c:/team_soc/minisys1_1/minisys1_1.srcs/sources/mult/synth/mult.vhd:67]
+WARNING: [Synth 8-3331] design luts has unconnected port CLK
+WARNING: [Synth 8-3331] design luts has unconnected port CE
+WARNING: [Synth 8-3331] design luts has unconnected port SCLR
+WARNING: [Synth 8-3331] design mult_gen_v12_0_14_viv has unconnected port CE
+WARNING: [Synth 8-3331] design mult_gen_v12_0_14_viv has unconnected port SCLR
+TclStackFree: incorrect freePtr. Call out of sequence?

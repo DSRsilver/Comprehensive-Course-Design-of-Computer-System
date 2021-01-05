@@ -1,0 +1,2 @@
+div.vhd,vhdl,xil_defaultlib,../../../../../../../minisys1_1/minisys1_1.srcs/sources/div/sim/div.vhd,
+glbl.v,Verilog,xil_defaultlib,glbl.v

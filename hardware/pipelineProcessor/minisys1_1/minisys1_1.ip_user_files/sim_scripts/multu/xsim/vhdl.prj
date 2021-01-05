@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../../../../minisys1_1/minisys1_1.srcs/sources/multu/sim/multu.vhd" \
+
+nosort

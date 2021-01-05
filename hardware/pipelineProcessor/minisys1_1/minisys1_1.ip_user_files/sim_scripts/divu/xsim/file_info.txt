@@ -1,0 +1,2 @@
+divu.vhd,vhdl,xil_defaultlib,../../../../../../../minisys1_1/minisys1_1.srcs/sources/divu/sim/divu.vhd,
+glbl.v,Verilog,xil_defaultlib,glbl.v

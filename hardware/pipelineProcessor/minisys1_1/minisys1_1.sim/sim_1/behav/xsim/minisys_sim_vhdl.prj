@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../team_soc/minisys1_1/minisys1_1.srcs/sources/mult/sim/mult.vhd" \
+"../../../../../../team_soc/minisys1_1/minisys1_1.srcs/sources/multu/sim/multu.vhd" \
+
+# Do not sort compile order
+nosort
