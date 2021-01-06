@@ -17,12 +17,14 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
     wire[31:0] instruction_if_id_in;
 	wire[31:0] pc_plus_4_if_id_in;
 	wire [13:0] rom_adr;
+	wire[31:0] pc;
 	
 	wire       if_id_reset;
 	wire       if_id_enable;
 	wire[31:0] pc_plus_4_if_id_out;
     wire[31:0] instruction_if_id_out;
     
+    //ide模块输出
     wire[31:0]  read_data_1_id_exe_in;	
     wire[31:0]  read_data_2_id_exe_in;	
     wire[31:0]  sign_extend_id_exe_in;	//符号扩展
@@ -30,9 +32,11 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
     wire        r_hi_id_exe_in, r_lo_id_exe_in;
     wire[4:0]   rt;
     wire[31:0]  memorioaddr;
+    wire        reset_if_id;
+    wire        reset_id_exe;
     
     wire        jmp,jal_id_exe_in,jrn,jalr_id_exe_in;
-    wire        branch_id_exe_in,nbranch_id_exe_in,bgez_id_exe_in,bgtz_id_exe_in,blez_id_exe_in,bltz_id_exe_in,bgezal_id_exe_in,bltzal_id_exe_in;
+    wire        branch,nbranch,bgez,bgtz,blez,bltz,bgezal_id_exe_in,bltzal_id_exe_in;
     wire        lb_id_exe_in,lbu_id_exe_in,lh_id_exe_in,lhu_id_exe_in,lw_id_exe_in,sb_id_exe_in,sh_id_exe_in,sw_id_exe_in;
     wire        alusrc_id_exe_in;
     wire[1:0]   aluop_id_exe_in;
@@ -44,6 +48,8 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
     wire        iowrite_id_exe_in,ioread_id_exe_in;	        //I/O读写信号
     wire        memoriotoreg_id_exe_in;
     wire        w_hi_id_exe_in,w_lo_id_exe_in;
+    wire        zero;
+    wire        compare_id_exe_in;
     
     wire        id_exe_reset;
     wire        id_exe_enable;
@@ -57,26 +63,24 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
     wire[31:0]  read_data_1_id_exe_out;
     wire[31:0]  read_data_2_id_exe_out;
     wire[31:0]  sign_extend_id_exe_out;
-    wire        branch_id_exe_out,nbranch_id_exe_out;
     wire        bgez_id_exe_out,bgtz_id_exe_out,blez_id_exe_out,bltz_id_exe_out,bgezal_id_exe_out,bltzal_id_exe_out;
     wire        lb_id_exe_out,lbu_id_exe_out,lh_id_exe_out,lhu_id_exe_out,lw_id_exe_out,sb_id_exe_out,sh_id_exe_out,sw_id_exe_out;
     wire        iowrite_id_exe_out,ioread_id_exe_out;
     wire        memwrite_id_exe_out,memread_id_exe_out;
     wire        memoriotoreg_id_exe_out;
     wire        regwrite_id_exe_out;
-    wire[4:0]  write_register_address_id_exe_out;
+    wire[4:0]   write_register_address_id_exe_out;
     wire        r_hi_id_exe_out,r_lo_id_exe_out;
     wire        w_hi_id_exe_out,w_lo_id_exe_out;
     wire        jal_id_exe_out;
     wire        jalr_id_exe_out;
+    wire        compare_id_exe_out;
     
-    wire        zero;
     wire        overflow;
     wire[31:0]  alu_result_exe_mem_in;	
     wire[31:0]  hi_data_exe_mem_in;
     wire[31:0]  lo_data_exe_mem_in;
     wire [31:0] add_result;	
-    wire[1:0]   compare_exe_mem_in;
     wire        memenable0_exe_mem_in,memenable1_exe_mem_in,memenable2_exe_mem_in,memenable3_exe_mem_in;
     
     
@@ -146,6 +150,8 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
     wire[15:0]  ioread_data_switch;
     
     
+    
+    
     wire rst;
 	// UART Programmer Pinouts
 	wire upg_clk, upg_clk_o, upg_wen_o, upg_done_o;
@@ -205,28 +211,29 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
         .clock(clock),
         .Add_result(add_result),
         .Read_data_1(read_data_1_id_exe_in),		// 来自译码单元，jr指令用的地址
-        .Branch(branch_id_exe_out),			// 来自控制单元
-        .nBranch(nbranch_id_exe_out),			// 来自控制单元
+        .Branch(branch),			// 来自控制单元
+        .nBranch(nbranch),			// 来自控制单元
         .Zero(zero),				// 来自执行单元
         .Jmp(jmp),				// 来自控制单元
         .Jal(jal_id_exe_in),				// 来自控制单元
         .Jalr(jalr_id_exe_in),                //来自控制单元
         .Jrn(jrn),				// 来自控制单元
         .Jpadr(rom_dat),		// 从程序ROM单元中获取的指令
-        .bgez(bgez_id_exe_out),
-        .bgtz(bgtz_id_exe_out),
-        .blez(blez_id_exe_out),
-        .bltz(bltz_id_exe_out),
+        .bgez(bgez),
+        .bgtz(bgtz),
+        .blez(blez),
+        .bltz(bltz),
         .bgezal(bgezal_id_exe_out),
         .bltzal(bltzal_id_exe_out),
-        .compare(compare_exe_mem_in),
+        .compare(compare_id_exe_in),
         .Instruction(instruction_if_id_in),	// 输出指令到其他模块
-        .PC_out(pc_plus_4_if_id_in),	// (pc+4)送执行单元
+        .PC_out(pc),	// (pc+4)送执行单元
+        .PC_plus_4_out(pc_plus_4_if_id_in),
         .rom_adr_o(rom_adr),			// 给程序ROM单元的取指地址
         .instruction_in(instruction_if_id_out)
     );
     
-    assign if_id_reset=1'b0;
+    assign if_id_reset=((reset_if_id==1)||(reset==1))?1'b1:1'b0;
     assign if_id_enable=1'b1;
     
 	if_id_reg if_id(
@@ -242,14 +249,15 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
     Idecode32 idecode(
         .clock(clock),
         .reset(reset),
+        .PC_plus_4(pc_plus_4_if_id_out),
         .Instruction(instruction_if_id_out),
         .read_data(memoriodata_mem_wb_out),   				//  从DATA RAM or I/O port取出的数据
         .ALU_result(alu_result_mem_wb_out),   				//  需要扩展立即数到32位
-        .Jal(jal_mem_wb_out), 
-        .Jalr(jalr_mem_wb_out),
-        .bgezal(bgezal_mem_wb_out),
-        .bltzal(bltzal_mem_wb_out),
-        .compare(compare_mem_wb_out),
+        .Jal_wb(jal_mem_wb_out), 
+        .Jalr_wb(jalr_mem_wb_out),
+        .bgezal_wb(bgezal_mem_wb_out),
+        .bltzal_wb(bltzal_mem_wb_out),
+        .compare_wb(compare_mem_wb_out),
         .RegWrite(regwrite_mem_wb_out),
         .MemorIOtoReg(memoriotoreg_mem_wb_out),
         .RegDst(regdst),        //为1说明目标是rd，否则是rt
@@ -268,7 +276,24 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
         .r_hi_out(r_hi_id_exe_in),   //mfhi
         .r_lo_out(r_lo_id_exe_in),   //mflo
         .rt(rt),  //用于区分bgez\bgtz\blez等指令
-        .MemorIOAddr(memorioaddr)
+        .MemorIOAddr(memorioaddr),
+        .Jrn(jrn),
+        .Jal(jal_id_exe_in),
+        .Jalr(jalr_id_exe_in),
+        .Jmp(jmp),
+        .Zero(zero),
+        .Branch(branch),
+        .nBranch(nbranch),
+        .bgez(bgez),
+        .bgtz(bgtz),
+        .blez(blez),
+        .bltz(bltz),
+        .bgezal(bgezal_id_exe_in),
+        .bltzal(bltzal_id_exe_in),
+        .compare(compare_id_exe_in),
+        .Add_Result(add_result),
+        .reset_if_id(reset_if_id),
+        .reset_id_exe(reset_id_exe)
     );
     
     control32 control(
@@ -289,12 +314,12 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
         .RegWrite(regwrite_id_exe_in),
         .MemWrite(memwrite_id_exe_in),
         .MemRead(memread_id_exe_in),
-        .Branch(branch_id_exe_in),
-        .nBranch(nbranch_id_exe_in),
-        .bgez(bgez_id_exe_in),
-        .bgtz(bgtz_id_exe_in),
-        .blez(blez_id_exe_in),
-        .bltz(bltz_id_exe_in),
+        .Branch(branch),
+        .nBranch(nbranch),
+        .bgez(bgez),
+        .bgtz(bgtz),
+        .blez(blez),
+        .bltz(bltz),
         .bgezal(bgezal_id_exe_in),
         .bltzal(bltzal_id_exe_in),
         .Lb(lb_id_exe_in),
@@ -314,7 +339,7 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
         .w_lo(w_lo_id_exe_in)
     );
     
-	assign id_exe_reset=1'b0;
+	assign id_exe_reset=(reset_id_exe==1'b1)||(reset==1'b1);
     assign id_exe_enable=1'b1;
     
 	id_exe_reg id_exe(
@@ -326,16 +351,10 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
          .ALUSrc_in(alusrc_id_exe_in),           // 决定第二个操作数是寄存器还是立即数
          .Sftmd_in(sftmd_id_exe_in),
          .ALUOp_in(aluop_id_exe_in),
-         .I_format_in(i_format_id_exe_in),
-         .Branch_in(branch_id_exe_in),
-         .nBranch_in(nbranch_id_exe_in),    
+         .I_format_in(i_format_id_exe_in), 
          .read_data_1_in(read_data_1_id_exe_in),
          .read_data_2_in(read_data_2_id_exe_in),
          .sign_extend_in(sign_extend_id_exe_in),
-         .bgez_in(bgez_id_exe_in),
-         .bgtz_in(bgtz_id_exe_in),
-         .blez_in(blez_id_exe_in),
-         .bltz_in(bltz_id_exe_in),
          .bgezal_in(bgezal_id_exe_in),
          .bltzal_in(bltzal_id_exe_in),
          .lb_in(lb_id_exe_in),
@@ -359,6 +378,7 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
          .w_lo_in(w_lo_id_exe_in),
          .Jal_in(jal_id_exe_in),
          .Jalr_in(jalr_id_exe_in),
+         .compare_in(compare_id_exe_in),
          
          .pc_plus_4_out(pc_plus_4_id_exe_out),
          .instruction_out(instruction_id_exe_out),
@@ -366,15 +386,9 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
          .Sftmd_out(sftmd_id_exe_out),
          .read_data_1_out(read_data_1_id_exe_out),
          .read_data_2_out(read_data_2_id_exe_out),
-         .Branch_out(branch_id_exe_out),
-         .nBranch_out(nbranch_id_exe_out),
          .I_format_out(i_format_id_exe_out),
          .ALUOp_out(aluop_id_exe_out),
          .sign_extend_out(sign_extend_id_exe_out),
-         .bgez_out(bgez_id_exe_out),
-         .bgtz_out(bgtz_id_exe_out),
-         .blez_out(blez_id_exe_out),
-         .bltz_out(bltz_id_exe_out),
          .bgezal_out(bgezal_id_exe_out),
          .bltzal_out(bltzal_id_exe_out),
          .lb_out(lb_id_exe_out),
@@ -397,7 +411,8 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
          .w_hi_out(w_hi_id_exe_out),
          .w_lo_out(w_lo_id_exe_out),
          .Jal_out(jal_id_exe_out),
-         .Jalr_out(jalr_id_exe_out)
+         .Jalr_out(jalr_id_exe_out),
+         .compare_out(compare_id_exe_out)
 	);
 	
     Executs32 execute(
@@ -413,13 +428,7 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
          .Sftmd(sftmd_id_exe_out),// 来自控制单元的，表明是移位指令
          .ALUSrc(alusrc_id_exe_out),// 来自控制单元，表明第二个操作数是立即数（beq，bne除外）
          .I_format(i_format_id_exe_out),// 来自控制单元，表明是除beq, bne, LW, SW之外的I-类型指令
-         .PC_plus_4(pc_plus_4_id_exe_out),         // 来自取指单元的PC+4
-         .bgez(bgez_id_exe_out),  
-         .bgtz(bgtz_id_exe_out),   
-         .blez(blez_id_exe_out),   
-         .bltz(bltz_id_exe_out),   
-         .bgezal(bgezal_id_exe_out), 
-         .bltzal(bltzal_id_exe_out), 
+    //     .PC_plus_4(pc_plus_4_id_exe_out),         // 来自取指单元的PC+4
          .lb(lb_id_exe_out),
          .lbu(lbu_id_exe_out),
          .lh(lh_id_exe_out),
@@ -429,13 +438,11 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
          .sh(sh_id_exe_out),
          .sw(sw_id_exe_out),
         
-         .Zero(zero),//为1表明计算值为0
          .overflow(overflow),
          .ALU_Result(alu_result_exe_mem_in),        // 计算的数据结果
          .hi_data(hi_data_exe_mem_in),
          .lo_data(lo_data_exe_mem_in),
-         .Add_Result(add_result),		//pc op  计算的地址结果     
-         .compare(compare_exe_mem_in),    //用于bgez,bgtz,blez,bltz,bgezal,bltzal//大于0是10，等于0是00，小于0是01
+    //     .Add_Result(add_result),		//pc op  计算的地址结果     
          .MemEnable0(memenable0_exe_mem_in),
          .MemEnable1(memenable1_exe_mem_in),
          .MemEnable2(memenable2_exe_mem_in),
@@ -451,7 +458,6 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
          .exe_mem_enable(exe_mem_enable), 
          .IOWrite_in(iowrite_id_exe_out),    
          .MemWrite_in(memwrite_id_exe_out), 
-         
          .IORead_in(ioread_id_exe_out),      
          .MemRead_in(memread_id_exe_out),
          .write_data_in(read_data_2_id_exe_out),//向存储器写入的数据，用于sw指令，来自read_data_2
@@ -467,15 +473,15 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
          .r_lo_in(r_lo_id_exe_out),
          .w_hi_in(w_hi_id_exe_out),
          .w_lo_in(w_lo_id_exe_out),
-         
          .hi_data_in(hi_data_exe_mem_in),
          .lo_data_in(lo_data_exe_mem_in),
          .Jal_in(jal_id_exe_out),
          .Jalr_in(jalr_id_exe_out),
          .bgezal_in(bgezal_id_exe_out),
          .bltzal_in(bltzal_id_exe_out),
-         .compare_in(compare_exe_mem_in), 
+         .compare_in(compare_id_exe_out), 
          .pc_plus_4_in(pc_plus_4_id_exe_out),
+         
          .IOWrite_out(iowrite_exe_mem_out) ,       //有IO
          .MemWrite_out(memwrite_exe_mem_out),
          .write_data_out(write_data_exe_mem_out),

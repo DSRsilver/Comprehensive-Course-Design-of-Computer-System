@@ -16,7 +16,7 @@ verilog xil_defaultlib  --include "../../../../minisys1_1.srcs/sources_1/ip/cpuc
 "../../../../minisys1_1.srcs/sources_1/new/mem_wb_reg.v" \
 "../../../../minisys1_1.srcs/sources_1/imports/minisys/minisys.v" \
 "../../../../minisys1_1.srcs/sources_1/imports/minisys/programrom.v" \
-"../../../../../../minisys1_1_classfiles/minisys/sim/control32_sim.v" \
+"../../../../../../../../minisys1_1_classfiles/minisys/sim/minisys_sim.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

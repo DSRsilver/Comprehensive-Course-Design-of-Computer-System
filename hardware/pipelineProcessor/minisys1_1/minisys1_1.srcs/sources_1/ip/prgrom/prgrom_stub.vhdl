@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Tue Jan  5 17:50:10 2021
+-- Date        : Wed Jan  6 21:39:40 2021
 -- Host        : LAPTOP-0A54SNRA running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               C:/minisys1A1/minisys1_1/minisys1_1.srcs/sources_1/ip/prgrom/prgrom_stub.vhdl
+--               C:/team_soc/hardware/pipelineProcessor/minisys1_1/minisys1_1.srcs/sources_1/ip/prgrom/prgrom_stub.vhdl
 -- Design      : prgrom
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tfgg484-1

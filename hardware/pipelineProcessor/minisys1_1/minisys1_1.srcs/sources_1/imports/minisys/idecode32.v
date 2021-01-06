@@ -1,21 +1,35 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 
-module Idecode32(read_data_1,read_data_2,Instruction,read_data,ALU_result,
-                 Jal,Jalr,bgezal,bltzal,compare,RegWrite,MemorIOtoReg,RegDst,Sign_extend,clock,reset,
+module Idecode32(read_data_1,read_data_2,Instruction,read_data,ALU_result,Jrn,Jalr,Jmp,Jal,Branch,nBranch,bgez,bgtz,blez,bltz,bgezal,bltzal,
+                 Jal_wb,Jalr_wb,bgezal_wb,bltzal_wb,compare_wb,RegWrite,MemorIOtoReg,RegDst,Sign_extend,clock,reset,
                  opcplus4,write_register_address_out,w_hi,w_lo,write_register_address_in,
-                 hi_data,lo_data,r_hi_in,r_lo_in,r_hi_out,r_lo_out,rt,MemorIOAddr);
+                 hi_data,lo_data,r_hi_in,r_lo_in,r_hi_out,r_lo_out,rt,MemorIOAddr,Zero,compare,PC_plus_4,Add_Result,
+                 reset_if_id,reset_id_exe
+                 );
                  
     input		  clock;
     input		  reset;
     input[31:0]  Instruction;//来自取指模块
     input[31:0]  read_data;   				//  从DATA RAM or I/O port取出的数据
     input[31:0]  ALU_result;   				//  需要扩展立即数到32位
-    input        Jal; 
+    input        Jrn;
     input        Jalr;
+    input        Jmp;
+    input        Jal;
+    input        Branch;
+    input        nBranch;
+    input        bgez;  
+    input        bgtz;  
+    input        blez;  
+    input        bltz; 
     input        bgezal;
     input        bltzal;
-    input[1:0]   compare;
+    input        Jal_wb; 
+    input        Jalr_wb;
+    input        bgezal_wb;
+    input        bltzal_wb;
+    input[1:0]   compare_wb;
     input        RegWrite;
     input        MemorIOtoReg;
     input        RegDst;        //为1说明目标是rd，否则是rt
@@ -28,7 +42,13 @@ module Idecode32(read_data_1,read_data_2,Instruction,read_data,ALU_result,
    // input[31:0]  hi_lo_data;
     input[31:0]  hi_data;
     input[31:0]  lo_data;
+    input[31:0]  PC_plus_4;
     
+    
+    //控制冲突解决部分,清空流水寄存器信号
+    output reset_if_id;
+    output reset_id_exe;
+ 
     output[31:0] read_data_1;
     output[31:0] read_data_2;
     output[31:0] Sign_extend;
@@ -37,7 +57,11 @@ module Idecode32(read_data_1,read_data_2,Instruction,read_data,ALU_result,
     output       r_lo_out;   //mflo
     output[4:0]  rt;  //用于区分bgez\bgtz\blez等指令
     output[31:0] MemorIOAddr;
+    output       Zero;
+    output[1:0]  compare;    //用于bgez,bgtz,blez,bltz,bgezal,bltzal//大于0是10，等于0是00，小于0是01
+    output[31:0] Add_Result;
     
+    reg[1:0]  compare;
     reg[31:0] read_data_1;//rs
     reg[31:0] read_data_2;//rt
     reg[31:0] register[0:31];			   //寄存器组共32个32位寄存器
@@ -61,6 +85,13 @@ module Idecode32(read_data_1,read_data_2,Instruction,read_data,ALU_result,
     
     reg[4:0] write_register_addr;
     
+    //流水寄存器清空
+//    reg reset_if_id;
+//    reg reset_id_exe;
+    wire reset_if_id;
+    wire reset_id_exe;
+    
+    
 //    assign w_hi=(opcode==1&&Instruction[5:0]==6'b010001);
 //    assign w_lo=(opcode==1&&Instruction[5:0]==6'b010011);
     assign r_hi_out=(opcode==6'b000000&&Instruction[5:0]==6'b010000);
@@ -82,6 +113,24 @@ module Idecode32(read_data_1,read_data_2,Instruction,read_data,ALU_result,
     :{sign,sign,sign,sign,sign,sign,sign,sign,sign,sign,sign,sign,sign,sign,sign,sign,
     Instruction_immediate_value[15:0]};
     
+    
+    assign Add_Result = PC_plus_4[31:0] + {Sign_extend[29:0],2'b00};    // 给取指单元作为beq和bne指令的跳转地址 
+    
+    assign Zero=(read_data_1==read_data_2)?1'b1:1'b0;
+    
+    always @* begin
+        if((bgez==1)||(bgtz==1)||(blez==1)||(bltz==1)||(bgezal==1)||(bltzal==1))begin
+            if(read_data_1[31]==1) begin
+                compare=2'b01;//小于0
+            end else if(read_data_1==32'b0000_0000_0000_0000_0000_0000_0000_0000) begin
+                compare=2'b00;//等于0
+            end else begin
+                compare=2'b10;//大于0
+            end 
+       end else begin
+        compare=2'b11;
+       end
+    end
     
 //    assign read_data_1 = register[read_register_1_address];
 //    assign read_data_2 = register[read_register_2_address];
@@ -131,7 +180,7 @@ module Idecode32(read_data_1,read_data_2,Instruction,read_data,ALU_result,
          end else if(r_lo_in) begin
             write_data=lo_data;
          end else if(MemorIOtoReg==0) begin
-            if((Jal==1)||(Jalr==1)||((bgezal==1)&&((compare==2'b10)||(compare==2'b00)))||((bltzal==1)&&(compare==2'b01))) begin
+            if((Jal_wb==1)||(Jalr_wb==1)||((bgezal_wb==1)&&((compare_wb==2'b10)||(compare_wb==2'b00)))||((bltzal_wb==1)&&(compare_wb==2'b01))) begin
                 write_data[31:0]=opcplus4[31:0];
             end else begin
                 write_data=ALU_result[31:0];
@@ -142,7 +191,7 @@ module Idecode32(read_data_1,read_data_2,Instruction,read_data,ALU_result,
        end
      
      always @* begin
-     if(((Jal==1)||((bgezal==1)&&((compare==2'b10)||(compare==2'b00)))||((bltzal==1)&&(compare==2'b01))))
+     if(((Jal_wb==1)||((bgezal_wb==1)&&((compare_wb==2'b10)||(compare_wb==2'b00)))||((bltzal_wb==1)&&(compare_wb==2'b01))))
         write_register_addr=5'b11111;
      else
         write_register_addr=write_register_address_in;
@@ -172,4 +221,26 @@ module Idecode32(read_data_1,read_data_2,Instruction,read_data,ALU_result,
        end
         end
     end
+    
+    //控制冲突reset信号判断
+//    always @* begin
+//        if((Jrn==1)||(Jalr==1)||(Jmp==1)||(Jal==1)||((Branch==1)&&(Zero==1))||((nBranch==1)&&(Zero==0))||
+//            ((bgez==1)&&((compare==2'b10)||(compare==2'b00)))||((bgtz==1)&&(compare==2'b10))||((blez==1)&&((compare==2'b00)||(compare==2'b01)))
+//            ||((bltz==1)&&(compare==2'b01))||((bgezal==1)&&((compare==2'b10)||(compare==2'b00)))||((bltzal==1)&&(compare==2'b01))) begin
+            
+//        reset_if_id=1'b1;
+//        reset_id_exe=1'b1;
+        
+//        end
+//    end
+
+assign reset_if_id=((Jrn==1)||(Jalr==1)||(Jmp==1)||(Jal==1)||((Branch==1)&&(Zero==1))||((nBranch==1)&&(Zero==0))||
+            ((bgez==1)&&((compare==2'b10)||(compare==2'b00)))||((bgtz==1)&&(compare==2'b10))||((blez==1)&&((compare==2'b00)||(compare==2'b01)))
+            ||((bltz==1)&&(compare==2'b01))||((bgezal==1)&&((compare==2'b10)||(compare==2'b00)))||((bltzal==1)&&(compare==2'b01)))?1'b1:1'b0;
+            
+assign reset_id_exe=((Jrn==1)||(Jalr==1)||(Jmp==1)||(Jal==1)||((Branch==1)&&(Zero==1))||((nBranch==1)&&(Zero==0))||
+            ((bgez==1)&&((compare==2'b10)||(compare==2'b00)))||((bgtz==1)&&(compare==2'b10))||((blez==1)&&((compare==2'b00)||(compare==2'b01)))
+            ||((bltz==1)&&(compare==2'b01))||((bgezal==1)&&((compare==2'b10)||(compare==2'b00)))||((bltzal==1)&&(compare==2'b01)))?1'b1:1'b0;
+    
+    
 endmodule
