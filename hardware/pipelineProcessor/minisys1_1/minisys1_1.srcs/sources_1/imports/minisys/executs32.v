@@ -2,8 +2,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module Executs32(clock,reset,Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
-                 Shamt,ALUSrc,I_format,Zero,Sftmd,ALU_Result,Add_Result,PC_plus_4,hi_data,lo_data,overflow,
-                 bgez,bgtz,blez,bltz,bgezal,bltzal,compare,lb,lbu,lh,lhu,lw,sb,sh,sw,MemEnable0,MemEnable1,MemEnable2,MemEnable3
+                 Shamt,ALUSrc,I_format,Sftmd,ALU_Result,hi_data,lo_data,overflow,
+                 lb,lbu,lh,lhu,lw,sb,sh,sw,MemEnable0,MemEnable1,MemEnable2,MemEnable3
                  );
     //input
     input        clock;
@@ -18,13 +18,13 @@ module Executs32(clock,reset,Read_data_1,Read_data_2,Sign_extend,Function_opcode
     input        Sftmd;// 来自控制单元的，表明是移位指令
     input        ALUSrc;// 来自控制单元，表明第二个操作数是立即数（beq，bne除外）
     input        I_format;// 来自控制单元，表明是除beq, bne, LW, SW之外的I-类型指令
-    input[31:0]  PC_plus_4;         // 来自取指单元的PC+4
-    input        bgez;  
-    input        bgtz;  
-    input        blez;  
-    input        bltz;  
-    input        bgezal;
-    input        bltzal;
+//    input[31:0]  PC_plus_4;         // 来自取指单元的PC+4
+//    input        bgez;  
+//    input        bgtz;  
+//    input        blez;  
+//    input        bltz;  
+//    input        bgezal;
+//    input        bltzal;
     input        lb;
     input        lbu;
     input        lh;
@@ -36,15 +36,15 @@ module Executs32(clock,reset,Read_data_1,Read_data_2,Sign_extend,Function_opcode
     
     
     //output
-    output       Zero;//为1表明计算值为0
+ //   output       Zero;//为1表明计算值为0
     output       overflow;
     output[31:0] ALU_Result;        // 计算的数据结果
 //    output[31:0] ALU_HI;
 //    output[31:0] ALU_LO;
     output[31:0] hi_data;
     output[31:0] lo_data;
-    output[31:0] Add_Result;		//pc op  计算的地址结果     
-    output[1:0]  compare;    //用于bgez,bgtz,blez,bltz,bgezal,bltzal//大于0是10，等于0是00，小于0是01
+ //   output[31:0] Add_Result;		//pc op  计算的地址结果     
+//    output[1:0]  compare;    //用于bgez,bgtz,blez,bltz,bgezal,bltzal//大于0是10，等于0是00，小于0是01
     output       MemEnable0;
     output       MemEnable1;
     output       MemEnable2;
@@ -59,7 +59,7 @@ module Executs32(clock,reset,Read_data_1,Read_data_2,Sign_extend,Function_opcode
     reg[31:0] ALU_LO;
     reg[31:0] hi_data;
     reg[31:0] lo_data;
-    reg[1:0] compare;
+  //  reg[1:0] compare;
     wire[31:0] Ainput,Binput;//ALU两个输入口
     reg[31:0] Cinput,Dinput;//all,srl指令的结果暂存器
     reg[31:0] Einput,Finput;//allv,srlv指令的结果暂存器
@@ -303,9 +303,9 @@ module Executs32(clock,reset,Read_data_1,Read_data_2,Sign_extend,Function_opcode
        else Sinput = Binput;
     end
     
-    assign Add_Result = PC_plus_4[31:0] + {Sign_extend[29:0],2'b00};    // 给取指单元作为beq和bne指令的跳转地址 
+ //   assign Add_Result = PC_plus_4[31:0] + {Sign_extend[29:0],2'b00};    // 给取指单元作为beq和bne指令的跳转地址 
     //判断结果是否为0
-    assign Zero = (ALU_output_mux[31:0]== 32'h00000000) ? 1'b1 : 1'b0;
+  //  assign Zero = (ALU_output_mux[31:0]== 32'h00000000) ? 1'b1 : 1'b0;
     
     always @(ALU_ctl or Ainput or Binput) begin
         case(ALU_ctl)
@@ -387,17 +387,17 @@ module Executs32(clock,reset,Read_data_1,Read_data_2,Sign_extend,Function_opcode
     end
     
       //bgez,bgtz,blez,bltz,bgezal,bltzal
-    always @* begin
-        if((bgez==1)||(bgtz==1)||(blez==1)||(bltz==1)||(bgezal==1)||(bltzal==1))begin
-            if(Ainput[31]==1) begin
-                compare=2'b01;//小于0
-            end else if(Ainput==32'b0000_0000_0000_0000_0000_0000_0000_0000) begin
-                compare=2'b00;//等于0
-            end else begin
-                compare=2'b10;//大于0
-            end
-        end
-    end
+//    always @* begin
+//        if((bgez==1)||(bgtz==1)||(blez==1)||(bltz==1)||(bgezal==1)||(bltzal==1))begin
+//            if(Ainput[31]==1) begin
+//                compare=2'b01;//小于0
+//            end else if(Ainput==32'b0000_0000_0000_0000_0000_0000_0000_0000) begin
+//                compare=2'b00;//等于0
+//            end else begin
+//                compare=2'b10;//大于0
+//            end
+//        end
+//    end
     
     //lb,lbu,lh,lhu,lw,sb,sh,sw//小端存储
     assign MemEnable0=(((lb||lbu||sb)&&(ALU_Result[1]==0)&&(ALU_Result[0]==0))||

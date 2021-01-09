@@ -22,14 +22,13 @@
 
 module id_exe_reg(clock,reset,id_exe_enable, pc_plus_4_in, instruction_in,read_data_1_in,read_data_2_in,sign_extend_in,
 write_register_address_in,r_hi_in, r_lo_in, w_hi_in, w_lo_in, 
-ALUSrc_in,MemorIOtoReg_in, IORead_in,IOWrite_in,RegWrite_in,MemWrite_in,MemRead_in, Branch_in,
-nBranch_in,I_format_in,Sftmd_in,ALUOp_in,Jal_in,Jalr_in,bgez_in,bgtz_in,blez_in,bltz_in,bgezal_in,bltzal_in,
-lb_in,lbu_in,lh_in,lhu_in,lw_in,sb_in,sh_in,sw_in,opcplus4_in,
+ALUSrc_in,MemorIOtoReg_in, IORead_in,IOWrite_in,RegWrite_in,MemWrite_in,MemRead_in, I_format_in,Sftmd_in,ALUOp_in,Jal_in,Jalr_in,bgezal_in,bltzal_in,
+lb_in,lbu_in,lh_in,lhu_in,lw_in,sb_in,sh_in,sw_in,opcplus4_in,compare_in,
 pc_plus_4_out,instruction_out, read_data_1_out,read_data_2_out,sign_extend_out,
 write_register_address_out,r_hi_out, r_lo_out, w_hi_out, w_lo_out, 
-ALUSrc_out,MemorIOtoReg_out, IORead_out,IOWrite_out,RegWrite_out,MemWrite_out,MemRead_out, Branch_out,
-nBranch_out, I_format_out,Sftmd_out,ALUOp_out,Jal_out,Jalr_out,bgez_out,bgtz_out,blez_out,bltz_out,bgezal_out,bltzal_out,
-lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out
+ALUSrc_out,MemorIOtoReg_out, IORead_out,IOWrite_out,RegWrite_out,MemWrite_out,MemRead_out, 
+ I_format_out,Sftmd_out,ALUOp_out,Jal_out,Jalr_out,bgezal_out,bltzal_out,
+lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out,compare_out
     );
     input       clock;
     input       reset;
@@ -47,17 +46,17 @@ lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out
     input       Sftmd_in;
     input[1:0]  ALUOp_in;
     input       I_format_in;
-    input       Branch_in;
-    input       nBranch_in;    
+//    input       Branch_in;
+//    input       nBranch_in;    
     input[31:0] read_data_1_in;
     input[31:0] read_data_2_in;
     input[31:0] sign_extend_in;
-    input       bgez_in;
-    input       bgtz_in;
-    input       blez_in;
-    input       bltz_in;
-    input       bgezal_in;
-    input       bltzal_in;
+//    input       bgez_in;
+//    input       bgtz_in;
+//    input       blez_in;
+//    input       bltz_in;
+//    input       bgezal_in;
+//    input       bltzal_in;
     input       lb_in;
     input       lbu_in;
     input       lh_in;
@@ -85,7 +84,11 @@ lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out
     input       w_lo_in;
     input       Jal_in;
     input       Jalr_in;
-    input[31:0] opcplus4_in;
+    input[31:0] opcplus4_in;    
+    input       bgezal_in;
+    input       bltzal_in;
+    input[1:0]  compare_in;
+    
     
 //    //用于取指-out
 //    output       Jrn_out;
@@ -99,17 +102,17 @@ lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out
     output       Sftmd_out;
     output[31:0] read_data_1_out;
     output[31:0] read_data_2_out;
-    output       Branch_out;
-    output       nBranch_out;
+//    output       Branch_out;
+//    output       nBranch_out;
     output       I_format_out;
     output[1:0]  ALUOp_out;
     output[31:0] sign_extend_out;
-    output       bgez_out;
-    output       bgtz_out;
-    output       blez_out;
-    output       bltz_out;
-    output       bgezal_out;
-    output       bltzal_out;
+//    output       bgez_out;
+//    output       bgtz_out;
+//    output       blez_out;
+//    output       bltz_out;
+//    output       bgezal_out;
+//    output       bltzal_out;
     output       lb_out;
     output       lbu_out;
     output       lh_out;
@@ -137,6 +140,9 @@ lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out
     output       Jal_out;
     output       Jalr_out; 
     output[31:0] opcplus4_out;
+    output       bgezal_out;
+    output       bltzal_out;
+    output[1:0]  compare_out;
 
 //    //取指
 //    reg       Jrn_out;
@@ -149,18 +155,18 @@ lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out
     reg       ALUSrc_out;            // 决定第二个操作数是寄存器还是立即数
     reg       Sftmd_out;
     reg[1:0]  ALUOp_out;
-    reg       Branch_out;
-    reg       nBranch_out;
+//    reg       Branch_out;
+//    reg       nBranch_out;
     reg       I_format_out;
     reg[31:0] read_data_1_out;
     reg[31:0] read_data_2_out;
     reg[31:0] sign_extend_out;
-    reg       bgez_out;
-    reg       bgtz_out;
-    reg       blez_out;
-    reg       bltz_out;
-    reg       bgezal_out;
-    reg       bltzal_out;
+//    reg       bgez_out;
+//    reg       bgtz_out;
+//    reg       blez_out;
+//    reg       bltz_out;
+//    reg       bgezal_out;
+//    reg       bltzal_out;
     reg       lb_out;
     reg       lbu_out;
     reg       lh_out;
@@ -188,6 +194,9 @@ lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out
     reg       Jal_out;
     reg       Jalr_out; 
     reg[31:0] opcplus4_out;
+    reg       bgezal_out;
+    reg       bltzal_out;
+    reg[1:0]  compare_out;
     
     
 always @(posedge reset or posedge clock) begin
@@ -200,10 +209,10 @@ always @(posedge reset or posedge clock) begin
             write_register_address_out <= 5'b00000;   
             r_hi_out <= 0;                      
             r_lo_out <= 0;  
-            bgez_out <= 0;   
-            bgtz_out <= 0;   
-            blez_out <= 0;   
-            bltz_out <= 0;   
+//            bgez_out <= 0;   
+//            bgtz_out <= 0;   
+//            blez_out <= 0;   
+//            bltz_out <= 0;   
             bgezal_out <= 0;   
             bltzal_out <= 0; 
             lb_out <= 0; 
@@ -224,14 +233,15 @@ always @(posedge reset or posedge clock) begin
             RegWrite_out <= 0;                  
             MemWrite_out <= 0;                  
             MemRead_out <= 0;                   
-            Branch_out <= 0;                    
-            nBranch_out <= 0;                   
+//            Branch_out <= 0;                    
+//            nBranch_out <= 0;                   
             I_format_out <= 0;                 
             Sftmd_out <= 0;                    
             ALUOp_out <= 2'b00; 
             Jal_out <= 0;
             Jalr_out <= 0; 
-            opcplus4_out <= 32'b0;                  
+            opcplus4_out <= 32'b0;     
+            compare_out <= 2'b00;             
         end else begin
             if(id_exe_enable == 1'b1) begin
                 pc_plus_4_out <= pc_plus_4_in;    
@@ -242,10 +252,10 @@ always @(posedge reset or posedge clock) begin
                 write_register_address_out <= write_register_address_in;
                 r_hi_out <= r_hi_in;   
                 r_lo_out <= r_lo_in; 
-                bgez_out <= bgez_in;   
-                bgtz_out <= bgtz_in;   
-                blez_out <= blez_in;   
-                bltz_out <= bltz_in;   
+//                bgez_out <= bgez_in;   
+//                bgtz_out <= bgtz_in;   
+//                blez_out <= blez_in;   
+//                bltz_out <= bltz_in;   
                 bgezal_out <= bgezal_in;   
                 bltzal_out <= bltzal_in; 
                 lb_out <= lb_in; 
@@ -266,14 +276,15 @@ always @(posedge reset or posedge clock) begin
                 RegWrite_out <= RegWrite_in;       
                 MemWrite_out <= MemWrite_in;       
                 MemRead_out <= MemRead_in;        
-                Branch_out <= Branch_in;         
-                nBranch_out <= nBranch_in;       
+//                Branch_out <= Branch_in;         
+//                nBranch_out <= nBranch_in;       
                 I_format_out <= I_format_in;       
                 Sftmd_out <= Sftmd_in;          
                 ALUOp_out <= ALUOp_in; 
                 Jal_out <= Jal_in;
                 Jalr_out <= Jalr_in;       
-                opcplus4_out <= opcplus4_in;         
+                opcplus4_out <= opcplus4_in;      
+                compare_out <= compare_in;   
             end
         end
  end

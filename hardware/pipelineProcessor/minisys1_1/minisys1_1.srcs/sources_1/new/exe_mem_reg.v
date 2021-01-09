@@ -51,7 +51,7 @@ MemEnable0_out,MemEnable1_out,MemEnable2_out,MemEnable3_out
     //ÓÃÓÚĞ´»Ø-in 
     input[31:0] pc_plus_4_in;
     input       RegWrite_in;
-    input[4:0] write_register_address_in;
+    input[4:0]  write_register_address_in;
     input       r_hi_in;  
     input       r_lo_in;  
     input       w_hi_in;  
@@ -127,7 +127,7 @@ MemEnable0_out,MemEnable1_out,MemEnable2_out,MemEnable3_out
     
     
 always @(posedge reset or posedge clock) begin
-        if(reset == 1'b1) begin
+        if(reset == 1'b1) begin    
             write_register_address_out <= 5'b00000;   
             r_hi_out <= 0;                      
             r_lo_out <= 0;                   
@@ -155,7 +155,7 @@ always @(posedge reset or posedge clock) begin
             MemEnable3_out  <= 0; 
                    
         end else begin
-            if(exe_mem_enable == 1'b1) begin
+            if(exe_mem_enable == 1'b1) begin  
                 write_register_address_out <= write_register_address_in;
                 r_hi_out <= r_hi_in;   
                 r_lo_out <= r_lo_in;   

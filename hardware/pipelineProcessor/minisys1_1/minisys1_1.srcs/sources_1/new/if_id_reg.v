@@ -39,7 +39,7 @@ always @(posedge reset or posedge clock) begin
             instruction_out<=32'b0;
         end else begin
             if(if_id_enable == 1'b1) begin
-                pc_plus_4_out = pc_plus_4_in;
+                pc_plus_4_out <= pc_plus_4_in;
                 instruction_out<=instruction_in;
             end
         end

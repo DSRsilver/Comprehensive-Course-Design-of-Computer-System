@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 module Ifetc32 (reset,clock,Instruction,PC_out,Add_result,Read_data_1,Branch,nBranch,Zero,Jmp,Jal,Jalr,
-Jrn,rom_adr_o,Jpadr,bgez,bgtz,blez,bltz,bgezal,bltzal,compare,instruction_in);
+Jrn,rom_adr_o,Jpadr,bgez,bgtz,blez,bltz,bgezal,bltzal,compare,instruction_in,PC_plus_4_out);
 
 	input			reset;				// 复位信号(高电平有效)
     input			clock;				// 时钟(23MHz)
@@ -28,7 +28,7 @@ Jrn,rom_adr_o,Jpadr,bgez,bgtz,blez,bltz,bgezal,bltzal,compare,instruction_in);
     
 	output	[31:0]	Instruction;		// 输出指令到其他模块
 	output [31:0]	PC_out;
- //   output	[31:0]	PC_plus_4_out;		// (pc+4)送执行单元
+    output	[31:0]	PC_plus_4_out;		// (pc+4)送执行单元
 //    output[31:0]	opcplus4;			// JAL指令专用的PC+4
     // ROM Pinouts
 	output	[13:0]	rom_adr_o;			// 给程序ROM单元的取指地址
@@ -36,6 +36,7 @@ Jrn,rom_adr_o,Jpadr,bgez,bgtz,blez,bltz,bgezal,bltzal,compare,instruction_in);
     
     wire [31:0] PC_plus_4;
     reg [31:0] PC;
+    reg [31:0] PC_plus_4_out;
    // reg [31:0] next_PC;		// 下条指令的PC（不一定是PC+4)
 //    reg [31:0] opcplus4;
     
@@ -47,7 +48,7 @@ Jrn,rom_adr_o,Jpadr,bgez,bgtz,blez,bltz,bgezal,bltzal,compare,instruction_in);
        
     //阻塞赋值和非阻塞赋值
     //如果ir用非阻塞<=， PC={4'b0000,IR[25:0],2'b00};这句会慢一个周期
-    always @ (posedge clock) begin
+    always @ (*) begin
         if(reset)begin
             IR=0;
         end else  begin
@@ -77,7 +78,9 @@ Jrn,rom_adr_o,Jpadr,bgez,bgtz,blez,bltz,bgezal,bltzal,compare,instruction_in);
         end
                 // PC<=PC_plus_4_out;//pc+4
     end
-    
+    always @ (negedge clock) begin
+        PC_plus_4_out=PC_plus_4[31:0];
+    end
     
     assign PC_out=PC[31:0]; 
    // assign PC_plus_4_out=PC;    

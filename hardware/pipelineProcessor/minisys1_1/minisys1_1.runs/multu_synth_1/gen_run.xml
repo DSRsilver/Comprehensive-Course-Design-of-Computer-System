@@ -5,7 +5,7 @@
   <File Type="RDS-RDS" Name="multu.vds"/>
   <File Type="RDS-DCP" Name="multu.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/multu">
-    <File Path="$PPRDIR/../../team_soc/minisys1_1/minisys1_1.srcs/sources/multu/multu.xci">
+    <File Path="$PPRDIR/../../../minisys1_1/minisys1_1.srcs/sources/multu/multu.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -18,7 +18,7 @@
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/multu">
-    <File Path="$PPRDIR/../../team_soc/minisys1_1/minisys1_1.srcs/sources/multu/multu.xci">
+    <File Path="$PPRDIR/../../../minisys1_1/minisys1_1.srcs/sources/multu/multu.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
