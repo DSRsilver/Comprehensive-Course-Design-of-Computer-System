@@ -14,13 +14,15 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
     wire clock;				            //clock: 分频后时钟供给系统
     wire reset;
     
+    wire  if_stall;
+    
     wire[31:0] instruction_if_id_in;
 	wire[31:0] pc_plus_4_if_id_in;
 	wire [13:0] rom_adr;
 	wire[31:0] pc;
 	
 	wire       if_id_reset;
-	wire       if_id_enable;
+	reg        if_id_enable;
 	wire[31:0] pc_plus_4_if_id_out;
     wire[31:0] instruction_if_id_out;
     
@@ -34,6 +36,10 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
     wire[31:0]  memorioaddr;
     wire        reset_if_id;
     wire        reset_id_exe;
+    wire        stall;
+    
+    wire        reset_ifid_id_exe_in;
+    wire        reset_idexe_id_exe_in;
     
     wire        jmp,jal_id_exe_in,jrn,jalr_id_exe_in;
     wire        branch,nbranch,bgez,bgtz,blez,bltz,bgezal_id_exe_in,bltzal_id_exe_in;
@@ -49,7 +55,7 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
     wire        memoriotoreg_id_exe_in;
     wire        w_hi_id_exe_in,w_lo_id_exe_in;
     wire        zero;
-    wire        compare_id_exe_in;
+    wire[1:0]   compare_id_exe_in;
     
     wire        id_exe_reset;
     wire        id_exe_enable;
@@ -74,7 +80,7 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
     wire        w_hi_id_exe_out,w_lo_id_exe_out;
     wire        jal_id_exe_out;
     wire        jalr_id_exe_out;
-    wire        compare_id_exe_out;
+    wire[1:0]   compare_id_exe_out;
     
     wire        overflow;
     wire[31:0]  alu_result_exe_mem_in;	
@@ -206,7 +212,12 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
 		.upg_done_i		(upg_done_o)	    // 1 if programming is finished
 	);
 	
+  
+    assign    if_stall = (stall==1)?1'b1:1'b0;
+  
+    
     Ifetc32 ifetch(
+        .stall(if_stall),
         .reset(reset),
         .clock(clock),
         .Add_result(add_result),
@@ -223,8 +234,8 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
         .bgtz(bgtz),
         .blez(blez),
         .bltz(bltz),
-        .bgezal(bgezal_id_exe_out),
-        .bltzal(bltzal_id_exe_out),
+        .bgezal(bgezal_id_exe_in),
+        .bltzal(bltzal_id_exe_in),
         .compare(compare_id_exe_in),
         .Instruction(instruction_if_id_in),	// 输出指令到其他模块
         .PC_out(pc),	// (pc+4)送执行单元
@@ -233,8 +244,20 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
         .instruction_in(instruction_if_id_out)
     );
     
-    assign if_id_reset=((reset_if_id==1)||(reset==1))?1'b1:1'b0;
-    assign if_id_enable=1'b1;
+//    always @(negedge clock)begin
+//        if_id_reset <= ((reset == 1)||(reset_if_id == 1))?1'b1:1'b0;
+//    end
+    assign if_id_reset = ((reset_if_id == 1)||(reset == 1))?1'b1:1'b0;
+ //   assign if_id_enable=(stall==1)?1'b0:1'b1;
+    always @* begin
+        if(reset==1)
+           if_id_enable=1'b1;
+        if(stall==1) 
+            if_id_enable=1'b0;
+        else
+            if_id_enable=1'b1;
+    end
+//    assign if_id_enable=1'b1;
     
 	if_id_reg if_id(
 	    .clock(clock),
@@ -262,10 +285,10 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
         .MemorIOtoReg(memoriotoreg_mem_wb_out),
         .RegDst(regdst),        //为1说明目标是rd，否则是rt
         .opcplus4(pc_plus_4_mem_wb_out),                 // 来自取指单元，JAL中用
-        .w_hi(w_hi_mem_wb_out),          //mthi,mult,multu,div,divu
-        .w_lo(w_lo_mem_wb_out),          //mtlo,mult,multu,div,divu
-        .r_hi_in(r_hi_mem_wb_out),       //mfhi
-        .r_lo_in(r_lo_mem_wb_out),       //mflo
+        .w_hi_wb(w_hi_mem_wb_out),          //mthi,mult,multu,div,divu
+        .w_lo_wb(w_lo_mem_wb_out),          //mtlo,mult,multu,div,divu
+        .r_hi_wb(r_hi_mem_wb_out),       //mfhi
+        .r_lo_wb(r_lo_mem_wb_out),       //mflo
         .write_register_address_in(write_register_address_mem_wb_out),
         .hi_data(hi_data_mem_wb_out),
         .lo_data(lo_data_mem_wb_out),
@@ -273,8 +296,8 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
         .read_data_2(read_data_2_id_exe_in),
         .Sign_extend(sign_extend_id_exe_in),
         .write_register_address_out(write_register_address_id_exe_in),
-        .r_hi_out(r_hi_id_exe_in),   //mfhi
-        .r_lo_out(r_lo_id_exe_in),   //mflo
+        .r_hi(r_hi_id_exe_in),   //mfhi
+        .r_lo(r_lo_id_exe_in),   //mflo
         .rt(rt),  //用于区分bgez\bgtz\blez等指令
         .MemorIOAddr(memorioaddr),
         .Jrn(jrn),
@@ -292,6 +315,10 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
         .bltzal(bltzal_id_exe_in),
         .compare(compare_id_exe_in),
         .Add_Result(add_result),
+        .write_register_address_id_exe(write_register_address_id_exe_out),
+        .write_register_address_exe_mem(write_register_address_exe_mem_out),
+        .write_register_address_mem_wb(write_register_address_mem_wb_out),
+        .stall(stall),
         .reset_if_id(reset_if_id),
         .reset_id_exe(reset_id_exe)
     );
@@ -336,9 +363,14 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
         .Sftmd(sftmd_id_exe_in),
         .ALUOp(aluop_id_exe_in),
         .w_hi(w_hi_id_exe_in),
-        .w_lo(w_lo_id_exe_in)
+        .w_lo(w_lo_id_exe_in),
+        .r_hi(r_hi_id_exe_in),   //mfhi
+        .r_lo(r_lo_id_exe_in)   //mflo
     );
     
+//    always@(negedge clock)begin
+//        id_exe_reset=((reset==1'b1)||(reset_id_exe==1'b1))?1'b1:1'b0;
+//    end
 	assign id_exe_reset=(reset_id_exe==1'b1)||(reset==1'b1);
     assign id_exe_enable=1'b1;
     
@@ -449,7 +481,7 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
          .MemEnable3(memenable3_exe_mem_in)
 	);
 	
-	assign exe_mem_reset=1'b0;
+	assign exe_mem_reset=(reset==1)?1'b1:1'b0;
     assign exe_mem_enable=1'b1;
     
 	exe_mem_reg exe_mem(
@@ -509,7 +541,7 @@ module minisys (fpga_rst,fpga_clk,led2N4,start_pg,rx,tx );
          .pc_plus_4_out(pc_plus_4_exe_mem_out)
 	);
 	
-	assign mem_wb_reset=1'b0;
+	assign mem_wb_reset=(reset==1)?1'b1:1'b0;
     assign mem_wb_enable=1'b1;
     
 	mem_wb_reg mem_wb(

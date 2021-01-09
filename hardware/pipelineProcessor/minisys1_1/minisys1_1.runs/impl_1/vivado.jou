@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jan  7 15:41:47 2021
+# Process ID: 15116
+# Current directory: C:/team_soc/hardware/pipelineProcessor/minisys1_1/minisys1_1.runs/impl_1
+# Command line: vivado.exe -log minisys.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source minisys.tcl -notrace
+# Log file: C:/team_soc/hardware/pipelineProcessor/minisys1_1/minisys1_1.runs/impl_1/minisys.vdi
+# Journal file: C:/team_soc/hardware/pipelineProcessor/minisys1_1/minisys1_1.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source minisys.tcl -notrace

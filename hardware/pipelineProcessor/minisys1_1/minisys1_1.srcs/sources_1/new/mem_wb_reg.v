@@ -105,7 +105,7 @@ MemorIOtoReg_out,RegWrite_out,write_data_out,
     reg[31:0] pc_plus_4_out; 
     
     
-always @(posedge reset or posedge clock) begin
+always @(posedge clock) begin
         if(reset == 1'b1) begin
             write_register_address_out <= 5'b00000;   
             r_hi_out <= 0;                      

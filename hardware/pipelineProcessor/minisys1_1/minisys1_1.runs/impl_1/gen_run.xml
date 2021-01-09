@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1610005300">
+  <File Type="BITSTR-BMM" Name="minisys_bd.bmm"/>
+  <File Type="PA-TCL" Name="minisys.tcl"/>
+  <File Type="OPT-DCP" Name="minisys_opt.dcp"/>
+  <File Type="REPORTS-TCL" Name="minisys_reports.tcl"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="minisys_incremental_reuse_pre_placed.rpt"/>
+  <File Type="OPT-DRC" Name="minisys_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="minisys.hwdef"/>
+  <File Type="PWROPT-DCP" Name="minisys_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="minisys_placed.dcp"/>
+  <File Type="BG-BGN" Name="minisys.bgn"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="minisys_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="minisys.bin"/>
+  <File Type="PHYSOPT-DCP" Name="minisys_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="minisys.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="minisys_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="minisys_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="minisys_routed_bb.dcp"/>
+  <File Type="BITSTR-LTX" Name="minisys.ltx"/>
+  <File Type="BITSTR-MMI" Name="minisys.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="minisys.sysdef"/>
+  <File Type="ROUTE-TIMING-PB" Name="minisys_timing_summary_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="minisys_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="minisys_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="minisys.bit"/>
+  <File Type="BITSTR-RBT" Name="minisys.rbt"/>
+  <File Type="BITSTR-NKY" Name="minisys.nky"/>
+  <File Type="BG-DRC" Name="minisys.drc"/>
+  <File Type="RDI-RDI" Name="minisys.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/control32.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/control32.v"/>
+        <Attr Name="ImportTime" Val="1532539148"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/exe_mem_reg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/executs32.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/executs32.v"/>
+        <Attr Name="ImportTime" Val="1533657642"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/id_exe_reg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/idecode32.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/idecode32.v"/>
+        <Attr Name="ImportTime" Val="1532543165"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/if_id_reg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/ifetc32.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/ifetc32.v"/>
+        <Attr Name="ImportTime" Val="1532612405"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mem_wb_reg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/programrom.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/programrom.v"/>
+        <Attr Name="ImportTime" Val="1532611683"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/minisys.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/minisys.v"/>
+        <Attr Name="ImportTime" Val="1532576664"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/dmemory32.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/dmemory32.v"/>
+        <Attr Name="ImportTime" Val="1532545943"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/ioread.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/ioread.v"/>
+        <Attr Name="ImportTime" Val="1531900918"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/leds.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/leds.v"/>
+        <Attr Name="ImportTime" Val="1532541535"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/memorio.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/memorio.v"/>
+        <Attr Name="ImportTime" Val="1531901077"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/switchs.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/switchs.v"/>
+        <Attr Name="ImportTime" Val="1532611610"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/minisys/controlIO32.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/controlIO32.v"/>
+        <Attr Name="ImportTime" Val="1532854833"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/prgrom/prgmip32.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/ram/dmem32.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="minisys"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/xdc/minisys.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../sysclassfiles/orgnizationtrain/minisys/xdc/minisys.xdc"/>
+        <Attr Name="ImportTime" Val="1532053177"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="uart_bmpg_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="cpuclk"/>
+  <BlockFileSet Type="BlockSrcs" Name="multu"/>
+  <BlockFileSet Type="BlockSrcs" Name="mult"/>
+  <BlockFileSet Type="BlockSrcs" Name="prgrom"/>
+</GenRun>

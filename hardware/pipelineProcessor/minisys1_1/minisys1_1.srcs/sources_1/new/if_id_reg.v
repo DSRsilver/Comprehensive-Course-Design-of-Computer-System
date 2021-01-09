@@ -33,16 +33,18 @@ output[31:0] instruction_out;
 reg[31:0] pc_plus_4_out;
 reg[31:0] instruction_out;
 
-always @(posedge reset or posedge clock) begin
+always @(posedge clock) begin
+    if(if_id_enable == 1'b1) begin
         if(reset == 1'b1) begin
-            pc_plus_4_out <= 32'b0;
-            instruction_out<=32'b0;
+            pc_plus_4_out <= 32'd0;
+            instruction_out<=32'd0;
         end else begin
-            if(if_id_enable == 1'b1) begin
+//           if(if_id_enable == 1'b1) begin
                 pc_plus_4_out <= pc_plus_4_in;
-                instruction_out<=instruction_in;
-            end
+                instruction_out <= instruction_in;
+//            end
         end
+    end
  end
 
 endmodule

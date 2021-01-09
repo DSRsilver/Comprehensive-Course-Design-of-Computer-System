@@ -23,13 +23,14 @@
 module id_exe_reg(clock,reset,id_exe_enable, pc_plus_4_in, instruction_in,read_data_1_in,read_data_2_in,sign_extend_in,
 write_register_address_in,r_hi_in, r_lo_in, w_hi_in, w_lo_in, 
 ALUSrc_in,MemorIOtoReg_in, IORead_in,IOWrite_in,RegWrite_in,MemWrite_in,MemRead_in, I_format_in,Sftmd_in,ALUOp_in,Jal_in,Jalr_in,bgezal_in,bltzal_in,
-lb_in,lbu_in,lh_in,lhu_in,lw_in,sb_in,sh_in,sw_in,opcplus4_in,compare_in,
+lb_in,lbu_in,lh_in,lhu_in,lw_in,sb_in,sh_in,sw_in,compare_in,
 pc_plus_4_out,instruction_out, read_data_1_out,read_data_2_out,sign_extend_out,
 write_register_address_out,r_hi_out, r_lo_out, w_hi_out, w_lo_out, 
 ALUSrc_out,MemorIOtoReg_out, IORead_out,IOWrite_out,RegWrite_out,MemWrite_out,MemRead_out, 
  I_format_out,Sftmd_out,ALUOp_out,Jal_out,Jalr_out,bgezal_out,bltzal_out,
-lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out,compare_out
+lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,compare_out
     );
+    
     input       clock;
     input       reset;
     input       id_exe_enable;  
@@ -77,14 +78,13 @@ lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out,compare_o
     
     //”√”⁄–¥ªÿ-in
     input       RegWrite_in;
-    input[4:0] write_register_address_in;
+    input[4:0]  write_register_address_in;
     input       r_hi_in;  
     input       r_lo_in;  
     input       w_hi_in;  
     input       w_lo_in;
     input       Jal_in;
     input       Jalr_in;
-    input[31:0] opcplus4_in;    
     input       bgezal_in;
     input       bltzal_in;
     input[1:0]  compare_in;
@@ -139,7 +139,6 @@ lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out,compare_o
     output       w_lo_out;
     output       Jal_out;
     output       Jalr_out; 
-    output[31:0] opcplus4_out;
     output       bgezal_out;
     output       bltzal_out;
     output[1:0]  compare_out;
@@ -193,13 +192,12 @@ lb_out,lbu_out,lh_out,lhu_out,lw_out,sb_out,sh_out,sw_out,opcplus4_out,compare_o
     reg       RegWrite_out;
     reg       Jal_out;
     reg       Jalr_out; 
-    reg[31:0] opcplus4_out;
     reg       bgezal_out;
     reg       bltzal_out;
     reg[1:0]  compare_out;
     
     
-always @(posedge reset or posedge clock) begin
+always @(posedge clock) begin
         if(reset == 1'b1) begin
             pc_plus_4_out <= 32'b0;
             instruction_out <= 32'b0;
@@ -239,8 +237,7 @@ always @(posedge reset or posedge clock) begin
             Sftmd_out <= 0;                    
             ALUOp_out <= 2'b00; 
             Jal_out <= 0;
-            Jalr_out <= 0; 
-            opcplus4_out <= 32'b0;     
+            Jalr_out <= 0;    
             compare_out <= 2'b00;             
         end else begin
             if(id_exe_enable == 1'b1) begin
@@ -282,8 +279,7 @@ always @(posedge reset or posedge clock) begin
                 Sftmd_out <= Sftmd_in;          
                 ALUOp_out <= ALUOp_in; 
                 Jal_out <= Jal_in;
-                Jalr_out <= Jalr_in;       
-                opcplus4_out <= opcplus4_in;      
+                Jalr_out <= Jalr_in;          
                 compare_out <= compare_in;   
             end
         end

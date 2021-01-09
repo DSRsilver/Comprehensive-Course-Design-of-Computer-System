@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="multu_synth_1" LaunchDir="C:/team_soc/hardware/pipelineProcessor/minisys1_1/minisys1_1.runs/multu_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="mult_synth_1" LaunchDir="C:/team_soc/hardware/pipelineProcessor/minisys1_1/minisys1_1.runs/mult_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/team_soc/hardware/pipelineProcessor/minisys1_1/minisys1_1.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="multu_synth_1"/>
+		<Parent Id="mult_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+
