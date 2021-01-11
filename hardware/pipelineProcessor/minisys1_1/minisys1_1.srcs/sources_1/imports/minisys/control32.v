@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////////////////
  module control32(clock,reset,Opcode,Function_opcode,
  Alu_resultHigh,Jrn,Jalr,RegDST,ALUSrc,MemorIOtoReg,IORead,IOWrite,RegWrite,MemRead,
- MemWrite,Branch,nBranch,bgez,bgtz,blez,bltz,bgezal,bltzal,Lb,Lbu,Lh,Lhu,Lw,Sb,Sh,Sw,Jmp,Jal,I_format,Sftmd,ALUOp,w_hi,w_lo,rt);
+ MemWrite,Branch,nBranch,bgez,bgtz,blez,bltz,bgezal,bltzal,Lb,Lbu,Lh,Lhu,Lw,Sb,Sh,Sw,Jmp,Jal,I_format,Sftmd,ALUOp,w_hi,w_lo,rt,r_hi,r_lo);
     
     input clock;
     input reset;
@@ -37,6 +37,8 @@
     output[1:0]  ALUOp;
     output       w_hi;
     output       w_lo;
+    output       r_hi;
+    output       r_lo;
      
     wire Jmp,I_format,Jal,Branch,nBranch;
     wire R_format,Lw,Sw;
@@ -85,12 +87,14 @@
     
      
     //写回
-    assign RegWrite=I_format||Lw|Lb||Lbu||Lh||Lhu||Jal||(R_format&&(!Jrn));
+    assign RegWrite=I_format||Lw|Lb||Lbu||Lh||Lhu||Jal||Jalr||bgezal||bltzal||(R_format&&(!Jrn));
     assign RegDST=(R_format&&(!Jrn));//说明目标是rd，否则是rt
     assign w_hi=(Opcode==6'b000000&&(Function_opcode==6'b010001||
-        Function_opcode==6'b011000||Function_opcode==6'b011001||Function_opcode==6'b011010||Function_opcode==6'b011011));//mthi,mult,multu,div,divu
+        Function_opcode==6'b011000||Function_opcode==6'b011001||Function_opcode==6'b011010||Function_opcode==6'b011011))?1'b1:1'b0;//mthi,mult,multu,div,divu
     assign w_lo=(Opcode==6'b000000&&(Function_opcode==6'b010011||
-        Function_opcode==6'b011000||Function_opcode==6'b011001||Function_opcode==6'b011010||Function_opcode==6'b011011));//mtlo,mult,multu,div,divu
+        Function_opcode==6'b011000||Function_opcode==6'b011001||Function_opcode==6'b011010||Function_opcode==6'b011011))?1'b1:1'b0;//mtlo,mult,multu,div,divu
+    assign r_hi=(Opcode==6'b000000&&Function_opcode==6'b010000)?1'b1:1'b0;   
+    assign r_lo=(Opcode==6'b000000&&Function_opcode==6'b010010)?1'b1:1'b0;
    
 
 endmodule  

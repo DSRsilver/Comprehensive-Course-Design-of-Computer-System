@@ -126,7 +126,7 @@ MemEnable0_out,MemEnable1_out,MemEnable2_out,MemEnable3_out
     reg[1:0]  compare_out;
     
     
-always @(posedge reset or posedge clock) begin
+always @(posedge clock) begin
         if(reset == 1'b1) begin    
             write_register_address_out <= 5'b00000;   
             r_hi_out <= 0;                      

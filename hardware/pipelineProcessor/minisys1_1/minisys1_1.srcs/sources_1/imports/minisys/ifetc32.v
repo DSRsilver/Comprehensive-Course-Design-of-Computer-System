@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-module Ifetc32 (reset,clock,Instruction,PC_out,Add_result,Read_data_1,Branch,nBranch,Zero,Jmp,Jal,Jalr,
+module Ifetc32 (reset,clock,Instruction,PC_out,Add_result,Read_data_1,Branch,nBranch,Zero,Jmp,Jal,Jalr,stall,
 Jrn,rom_adr_o,Jpadr,bgez,bgtz,blez,bltz,bgezal,bltzal,compare,instruction_in,PC_plus_4_out);
 
 	input			reset;				// 复位信号(高电平有效)
@@ -24,6 +24,7 @@ Jrn,rom_adr_o,Jpadr,bgez,bgtz,blez,bltz,bgezal,bltzal,compare,instruction_in,PC_
     input[1:0]      compare;
  //   input[31:0]     pc_in;
     input[31:0]     instruction_in;
+    input           stall;
 	
     
 	output	[31:0]	Instruction;		// 输出指令到其他模块
@@ -59,22 +60,26 @@ Jrn,rom_adr_o,Jpadr,bgez,bgtz,blez,bltz,bgezal,bltzal,compare,instruction_in,PC_
     always @ (negedge clock) begin
         if(reset) begin
             PC<=32'b0;
-        end else if(((bgezal==1)&&((compare==2'b10)||(compare==2'b00)))||((bltzal==1)&&(compare==2'b01))) begin
-            PC<=Add_result;//bgezal,bltzal
-        end  else if(((Branch==1)&&(Zero==1))||((nBranch==1)&&(Zero==0))
-                       ||((bgez==1)&&((compare==2'b10)||(compare==2'b00)))||((bgtz==1)&&(compare==2'b10))
-                       ||((blez==1)&&((compare==2'b01)||(compare==2'b00)))||((bltz==1)&&(compare==2'b10))) begin
-             PC<=Add_result;//beq,bne,bgez,bgtz,blez,bltz
-        end else if(Jmp==1||Jal==1)begin
- //            opcplus4<=pc_in[31:0];
-             PC<={4'b0000,instruction_in[25:0],2'b00};//jmp,jal
-        end else if(Jrn==1)begin
-             PC<=Read_data_1[31:0];//jrn
-        end else if(Jalr==1)begin
- //            opcplus4<=pc_in[31:0];
-             PC<=Read_data_1[31:0];//jalr
-        end  else begin
-             PC<=PC_plus_4;
+        end else if(stall==0)begin
+//            if(((bgezal==1)&&((compare==2'b10)||(compare==2'b00)))||((bltzal==1)&&(compare==2'b01))) begin
+//                PC<=Add_result;//bgezal,bltzal
+//            end  else
+            if(((Branch==1)&&(Zero==1))||((nBranch==1)&&(Zero==0))
+                           ||((bgez==1)&&((compare==2'b10)||(compare==2'b00)))||((bgtz==1)&&(compare==2'b10))
+                           ||((blez==1)&&((compare==2'b01)||(compare==2'b00)))||((bltz==1)&&(compare==2'b10))
+                           ||((bgezal==1)&&((compare==2'b10)||(compare==2'b00)))||((bltzal==1)&&(compare==2'b01))) begin
+                 PC<=Add_result;//beq,bne,bgez,bgtz,blez,bltz
+            end else if(Jmp==1||Jal==1)begin
+     //            opcplus4<=pc_in[31:0];
+                 PC<={4'b0000,instruction_in[25:0],2'b00};//jmp,jal
+            end else if(Jrn==1||Jalr==1)begin
+                 PC<=Read_data_1[31:0];//jrn,jalr
+//            end else if(Jalr==1)begin
+//     //            opcplus4<=pc_in[31:0];
+//                 PC<=Read_data_1[31:0];//jalr
+            end  else begin
+                 PC<=PC_plus_4;
+            end
         end
                 // PC<=PC_plus_4_out;//pc+4
     end

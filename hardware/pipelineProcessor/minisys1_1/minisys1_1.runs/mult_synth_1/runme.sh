@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/team_soc/硬件部分/多周期/minisys1_1/minisys1_1.runs/mult_synth_1'
+HD_PWD='C:/team_soc/hardware/pipelineProcessor/minisys1_1/minisys1_1.runs/mult_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
